@@ -1,0 +1,11 @@
+@font-face{
+  font-family: 'Jaapokki';
+  src: url('./assets/fonts/jaapokki/jaapokki-regular.eot');
+  src: url('./assets/fonts/jaapokki/jaapokki-regular.eot?#iefix') format('embedded-opentype'),
+  url('./assets/fonts/jaapokki/jaapokki-regular.woff') format('woff'),
+  url('./assets/fonts/jaapokki/jaapokki-regular.ttf') format('truetype'),
+  url('./assets/fonts/jaapokki/jaapokki-regular.svg#webfont') format('svg');
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
