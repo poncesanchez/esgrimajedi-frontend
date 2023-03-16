@@ -1,9 +1,9 @@
 import esgrimaLogo from './../../assets/esgrima-logo.svg'
 
 export const Header = () => {
-  return(
+  return (
     <header className="py-1.5 fixed w-full left-0 right-0 border-b border-b-primary-90 bg-gradient-to-b from-primary-100 to-transparent">
-      <div className="container mx-auto">
+      <div className="container mx-auto px-5">
         <div className="flex justify-items-center items-center">
           <div className="w-2/12">
             <div className="text-start flex">

@@ -2,12 +2,12 @@ import bgHome from './images/bg-home.png';
 import esgrimaJediValparaiso from './../../assets/esgrimajedi-valparaiso-logo.svg';
 
 export const Home = () => {
-  return(
-    <section id="home" 
-      style={{backgroundImage: `url(${bgHome})`}}
+  return (
+    <section id="home"
+      style={{ backgroundImage: `url(${bgHome})` }}
       className="h-screen bg-no-repeat bg-center bg-cover"
     >
-      <div className="container mx-auto h-screen">
+      <div className="container mx-auto h-screen px-5">
         <div className="grid grid-cols-12 gap-5 h-screen items-center">
           <div className="col-span-4">
             <img src={esgrimaJediValparaiso} alt="Esgrima Jedi Valparaíso" className="mb-5" />
