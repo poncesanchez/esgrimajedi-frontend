@@ -8,7 +8,8 @@ module.exports = {
     extend: {
       fontFamily: {
         primary: ['Nunito Sans', 'sans-serif'],
-        secondary: ['Jaapokki', 'sans-serif']
+        secondary: ['Jaapokki', 'sans-serif'],
+        terciary: ['Krona One', 'sans-serif'],
       },
       colors:{
         primary : {
