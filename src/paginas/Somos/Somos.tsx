@@ -1,9 +1,9 @@
 import imgRango from './../../assets/rango.svg';
 
 export const Somos = () => {
-  return(
+  return (
     <section id="somos" className="h-screen">
-      <div className="container mx-auto h-screen">
+      <div className="container mx-auto h-screen px-5">
         <div className="grid grid-cols-12 gap-5 h-screen items-center">
           <div className="col-span-6">
             <div>
@@ -13,8 +13,8 @@ export const Somos = () => {
             </div>
           </div>
           <div className="col-span-6">
-            <h2 className="font-secondary text-xl text-secondary-100 font-black tracking-widest flex items-center mb-10">
-              <span>SOMOS</span>
+            <h2 className="font-secondary text-3xl text-white font-black tracking-[0.5rem] flex items-center mb-10">
+              <span className="">SOMOS</span>
               <span className="relative flex w-full ml-3">
                 <span className="h-[1px] w-full bg-secondary-100 inline-block opacity-30"></span>
                 <span className="h-2 w-2 rounded-full bg-secondary-100 inline-block absolute right-0 -top-[3px]"></span>
@@ -53,7 +53,7 @@ export const Somos = () => {
               </div>
             </div>
 
-            <a href="#" 
+            <a href="#"
               className="bg-no-repeat bg-cover bg-center font-primary font-bold text-secondary-100 text-xs py-2 px-10 inline-block border-secondary-100 border tracking-widest bg-primary-100
               hover:bg-secondary-100 hover:text-white
               ">

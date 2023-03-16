@@ -1,11 +1,29 @@
-@font-face{
+@font-face {
   font-family: 'Jaapokki';
   src: url('./assets/fonts/jaapokki/jaapokki-regular.eot');
   src: url('./assets/fonts/jaapokki/jaapokki-regular.eot?#iefix') format('embedded-opentype'),
-  url('./assets/fonts/jaapokki/jaapokki-regular.woff') format('woff'),
-  url('./assets/fonts/jaapokki/jaapokki-regular.ttf') format('truetype'),
-  url('./assets/fonts/jaapokki/jaapokki-regular.svg#webfont') format('svg');
+    url('./assets/fonts/jaapokki/jaapokki-regular.woff') format('woff'),
+    url('./assets/fonts/jaapokki/jaapokki-regular.ttf') format('truetype'),
+    url('./assets/fonts/jaapokki/jaapokki-regular.svg#webfont') format('svg');
 }
+
+.square {
+  clip-path: polygon(0 40.00px, 40.00px 0, 100% 0, 100% calc(100% - 40.00px), calc(100% - 40.00px) 100%, 0 100%);
+}
+
+.square-border {
+  position: relative;
+}
+
+.square-border:before {
+  background-color: #CDB057;
+  content: "";
+  position: absolute;
+  inset: 0;
+  clip-path: polygon(0 40.00px, 40.00px 0, 100% 0, 100% calc(100% - 40.00px), calc(100% - 40.00px) 100%, 0 100%, 0 40.00px, 1px calc(40.00px + 0.41px), 1px calc(100% - 1px), calc(100% - 40.00px - 0.41px) calc(100% - 1px), calc(100% - 1px) calc(100% - 40.00px - 0.41px), calc(100% - 1px) 1px, calc(40.00px + 0.41px) 1px, 1px calc(40.00px + 0.41px));
+}
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
