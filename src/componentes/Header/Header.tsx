@@ -1,3 +1,4 @@
+import { Facebook, Instagram, MailOutline } from "@mui/icons-material"
 import esgrimaLogo from './../../assets/esgrima-logo.svg'
 
 export const Header = () => {
@@ -29,54 +30,17 @@ export const Header = () => {
             </nav>
           </div>
           <div className="w-2/12">
-            <div>
+            <div className="text-white">
               <a href="#">
-                instagram_
+                <Instagram />
               </a>
               <a href="#">
-                facebook_
+                <Facebook />
               </a>
             </div>
           </div>
         </div>
       </div>
-
-
-      {/* <div className="grid grid-cols-12 gap-5 justify-items-center items-center">
-        <div className="col-span-2">
-          <div className="text-start flex">
-            <img src={esgrimaLogo} className="w-16" alt="Esgrima Jedi Valparaíso" />
-          </div>
-        </div>
-        <div className="col-span-8 text-center">
-          <nav className="font-primary text-white uppercase text-xs font-bold tracking-widest">
-            <ul className="flex">
-              <li className="mx-2">
-                <a className="px-4 py-2 hover:text-secondary-100" href="#somos">Somos</a>
-              </li>
-              <li className="mx-2">
-                <a className="px-4 py-2" href="#somos">Conocenos</a>
-              </li>
-              <li className="mx-2">
-                <a className="px-4 py-2" href="#somos">Multimedia</a>
-              </li>
-              <li className="mx-2">
-                <a className="px-4 py-2" href="#somos">Unete</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-        <div className="col-span-2">
-          <div>
-            <a href="#">
-              instagram_
-            </a>
-            <a href="#">
-              facebook_
-            </a>
-          </div>
-        </div>
-      </div> */}
     </header>
   )
 };

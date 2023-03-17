@@ -1,10 +1,16 @@
 export const Unirse = () => {
   return (
-    <section id="somos">
-      <div className="container mx-auto px-5">
-        <div className="grid grid-cols-12 gap-5 items-center">
+    <section id="somos" className="h-screen">
+      <div className="container mx-auto px-5 h-screen">
+        <div className="grid grid-cols-12 gap-5 items-end h-screen pb-4">
           <div className="col-span-12 mb-16 text-center">
-            <h2 className="uppercase text-white font-terciary text-center text-2xl font-normal">ELIGE tu lado<br />y únete al combate</h2>
+            <div className="max-w-md mx-auto">
+              <h2 className="uppercase text-white font-terciary text-center text-2xl font-normal mb-4">ELIGE tu lado<br />y únete al combate</h2>
+              <p className="text-primary-50 font-primary text-sm font-medium">Lorem ipsum dolor sit amet, consectetur adipsicing ellit. Pellentesque tempus sagittis enim, in euismod enim viverra sed. Class aptent taciti sociosqu ad litora torquent per conobia nostra</p>
+
+            </div>
+
+
           </div>
         </div>
       </div>
