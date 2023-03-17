@@ -1,16 +1,39 @@
 import imgRango from './../../assets/rango.svg';
+import imgFondoSeccionSomos from './../../assets/fondo-seccion-somos.png';
+import Add from '@mui/icons-material/Add';
 
 export const Somos = () => {
   return (
-    <section id="somos" className="h-screen">
+    <section id="somos" 
+      style={{ backgroundImage: `url(${imgFondoSeccionSomos})` }}
+      className="h-screen bg-no-repeat bg-center bg-cover">
       <div className="container mx-auto h-screen px-5">
         <div className="grid grid-cols-12 gap-5 h-screen items-center">
-          <div className="col-span-6">
-            <div>
-              <div>
-
+          <div className="col-span-6 relative">
+            
+            <div className="relative flex z-10">
+              <div className="w-3/4">
+                <div className="absolute z-30 w-3/4 h-full flex text-center items-center justify-center">
+                  <div className="w-10 h-10 border border-secondary-100 text-secondary-100 hover:bg-secondary-100 hover:text-white">
+                    <Add className="mt-2" />
+                  </div>
+                </div>
+                <div className="square-staff-border w-3/4 h-96 absolute z-20" />
+                <div className="square-staff absolute z-10 w-3/4 h-full bg-gradient-to-b from-transparent to-primary-100" />
+                <div
+                  style={{ backgroundImage: `url(https://sm.ign.com/t/ign_es/feature/r/ranking-th/ranking-the-star-wars-movies-from-worst-to-best_hauh.1200.jpg)` }}
+                  className="square-staff bg-primary-90 w-full h-96 z-0 bg-no-repeat bg-cover bg-center" />
               </div>
             </div>
+
+            <div className="absolute w-full flex top-5 right-4 z-0">
+              <div className="w-3/4">
+                <div className="square-staff-border w-3/4 h-96 absolute z-20" />
+                <div className="absolute z-10 w-3/4 h-full bg-gradient-to-b from-transparent to-primary-100" />
+                <div className="square-staff w-full h-96 z-0 bg-no-repeat bg-cover bg-center" />
+              </div>
+            </div>
+
           </div>
           <div className="col-span-6">
             <h2 className="font-secondary text-3xl text-white font-black tracking-[0.5rem] flex items-center mb-10">

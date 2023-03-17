@@ -21,9 +21,6 @@ export const Home = () => {
               VER MÁS
             </a>
           </div>
-          <div className="col-span-8">
-            foto_personajes.
-          </div>
         </div>
       </div>
     </section>

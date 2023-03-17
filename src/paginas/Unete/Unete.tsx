@@ -1,6 +1,10 @@
-export const Unirse = () => {
+import imgFondoSeccionUnete from './../../assets/fondo-seccion-unete.png';
+
+export const Unete = () => {
   return (
-    <section id="somos" className="h-screen">
+    <section 
+      style={{ backgroundImage: `url(${imgFondoSeccionUnete})` }}
+      className="min-h-screen bg-no-repeat bg-top bg-cover py-20">
       <div className="container mx-auto px-5 h-screen">
         <div className="grid grid-cols-12 gap-5 items-end h-screen pb-4">
           <div className="col-span-12 mb-16 text-center">

@@ -7,14 +7,13 @@
     url('./assets/fonts/jaapokki/jaapokki-regular.svg#webfont') format('svg');
 }
 
+/* MULTIMEDIA SQUARE*/
 .square {
   clip-path: polygon(0 40.00px, 40.00px 0, 100% 0, 100% calc(100% - 40.00px), calc(100% - 40.00px) 100%, 0 100%);
 }
-
 .square-border {
   position: relative;
 }
-
 .square-border:before {
   background-color: #CDB057;
   content: "";
@@ -22,6 +21,21 @@
   inset: 0;
   clip-path: polygon(0 40.00px, 40.00px 0, 100% 0, 100% calc(100% - 40.00px), calc(100% - 40.00px) 100%, 0 100%, 0 40.00px, 1px calc(40.00px + 0.41px), 1px calc(100% - 1px), calc(100% - 40.00px - 0.41px) calc(100% - 1px), calc(100% - 1px) calc(100% - 40.00px - 0.41px), calc(100% - 1px) 1px, calc(40.00px + 0.41px) 1px, 1px calc(40.00px + 0.41px));
 }
+
+.square-staff{
+  clip-path: polygon(0 0,calc(100% - 40.00px) 0,100% 40.00px,100% 100%,40.00px 100%,0 calc(100% - 40.00px));
+}
+.square-staff-border {
+  position: relative;
+}
+.square-staff-border:before {
+  background-color: #CDB057;
+  content: "";
+  position: absolute;
+  inset: 0;
+  clip-path: polygon(0 0,calc(100% - 40.00px) 0,100% 40.00px,100% 100%,40.00px 100%,0 calc(100% - 40.00px),0 0,1px  1px ,1px calc(100% - 40.00px - 0.41px),calc(40.00px + 0.41px) calc(100% - 1px),calc(100% - 1px) calc(100% - 1px),calc(100% - 1px) calc(40.00px + 0.41px),calc(100% - 40.00px - 0.41px) 1px,1px 1px);
+}
+
 
 
 @tailwind base;

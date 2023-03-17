@@ -4,7 +4,7 @@ import { Conocenos } from './paginas/Conocenos/Conocenos'
 import { Home } from './paginas/Home/Home'
 import { Multimedia } from './paginas/Multimedia/Multimedia'
 import { Somos } from './paginas/Somos/Somos'
-import { Unirse } from './paginas/Unirse/Unirse'
+import { Unete } from './paginas/Unete/Unete'
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
       <Somos />
       <Conocenos />
       <Multimedia />
-      <Unirse />
+      <Unete />
       <Footer />
     </div>
   )
