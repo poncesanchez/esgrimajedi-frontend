@@ -4,13 +4,12 @@ import Add from '@mui/icons-material/Add';
 
 export const Somos = () => {
   return (
-    <section id="somos" 
+    <section id="somos"
       style={{ backgroundImage: `url(${imgFondoSeccionSomos})` }}
       className="h-screen bg-no-repeat bg-center bg-cover">
       <div className="container mx-auto h-screen px-5">
         <div className="grid grid-cols-12 gap-5 h-screen items-center">
-          <div className="col-span-6 relative">
-            
+          <div className="col-span-6 relative ml-10">
             <div className="relative flex z-10">
               <div className="w-3/4">
                 <div className="absolute z-30 w-3/4 h-full flex text-center items-center justify-center">

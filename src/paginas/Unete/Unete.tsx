@@ -2,7 +2,8 @@ import imgFondoSeccionUnete from './../../assets/fondo-seccion-unete.png';
 
 export const Unete = () => {
   return (
-    <section 
+    <section
+      id="unete"
       style={{ backgroundImage: `url(${imgFondoSeccionUnete})` }}
       className="min-h-screen bg-no-repeat bg-top bg-cover py-20">
       <div className="container mx-auto px-5 h-screen">

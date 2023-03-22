@@ -13,20 +13,20 @@ export const Footer = () => {
                            <a className="px-4 py-2 hover:text-secondary-100" href="#somos">Somos</a>
                         </li>
                         <li className="mx-2 mb-3">
-                           <a className="px-4 py-2" href="#somos">Conocenos</a>
+                           <a className="px-4 py-2 hover:text-secondary-100" href="#conocenos">Conocenos</a>
                         </li>
 
                         <li className="mx-2">
-                           <a className="px-4 inline-block" href="#somos">
-                            <img src={imgEsgrimaJedi} alt="Esgrima Jedi" />
+                           <a className="px-4 inline-block" href="#home">
+                              <img src={imgEsgrimaJedi} alt="Esgrima Jedi" />
                            </a>
                         </li>
 
                         <li className="mx-2 mb-3">
-                           <a className="px-4 py-2" href="#somos">Multimedia</a>
+                           <a className="px-4 py-2 hover:text-secondary-100" href="#multimedia">Multimedia</a>
                         </li>
                         <li className="mx-2 mb-3">
-                           <a className="px-4 py-2" href="#somos">Unete</a>
+                           <a className="px-4 py-2 hover:text-secondary-100" href="#unete">Unete</a>
                         </li>
                      </ul>
                   </nav>

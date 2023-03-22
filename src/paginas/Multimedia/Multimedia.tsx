@@ -4,12 +4,12 @@ import imgFondoSeccionMultimedia from './../../assets/fondo-seccion-multimedia.p
 
 export const Multimedia = () => {
   return (
-    <section id="somos"
+    <section id="multimedia"
       style={{ backgroundImage: `url(${imgFondoSeccionMultimedia})` }}
-      className="min-h-screen bg-no-repeat bg-top bg-contain pt-64 pb-16">
+      className="min-h-screen bg-no-repeat bg-top bg-contain pt-52 pb-16">
       <div className="container mx-auto px-5">
         <div className="grid grid-cols-12 gap-5 items-center">
-        <div className="col-span-12 mb-20">
+          <div className="col-span-12 mb-20">
             <div className="max-w-md mx-auto">
               <div className="flex flex-col items-center mb-10">
                 <span className="relative flex w-full">
