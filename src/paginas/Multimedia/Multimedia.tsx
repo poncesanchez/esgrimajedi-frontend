@@ -35,7 +35,7 @@ export const Multimedia = () => {
             </div>
           </div>
 
-          <div className="col-span-3">
+          <div className="col-span-12 xs:col-span-6 lg:col-span-3">
             <div className="relative mx-4">
               <div className="absolute z-30 w-full h-full flex text-center items-center justify-center">
                 <div className="w-10 h-10 border border-secondary-100 text-secondary-100 hover:bg-secondary-100 hover:text-white">
@@ -61,7 +61,7 @@ export const Multimedia = () => {
             </div>
           </div>
 
-          <div className="col-span-3">
+          <div className="col-span-12 sm:col-span-6 lg:col-span-3">
             <div className="relative mx-4">
               <div className="absolute z-30 w-full h-full flex text-center items-center justify-center">
                 <div className="w-10 h-10 border border-secondary-100 text-secondary-100 hover:bg-secondary-100 hover:text-white">
@@ -87,7 +87,7 @@ export const Multimedia = () => {
             </div>
           </div>
 
-          <div className="col-span-3">
+          <div className="col-span-12 sm:col-span-6 lg:col-span-3">
             <div className="relative mx-4">
               <div className="absolute z-30 w-full h-full flex text-center items-center justify-center">
                 <div className="w-10 h-10 border border-secondary-100 text-secondary-100 hover:bg-secondary-100 hover:text-white">
@@ -113,7 +113,7 @@ export const Multimedia = () => {
             </div>
           </div>
 
-          <div className="col-span-3">
+          <div className="col-span-12 xs:col-span-6 lg:col-span-3">
             <div className="relative mx-4">
               <div className="absolute z-30 w-full h-full flex text-center items-center justify-center">
                 <div className="w-10 h-10 border border-secondary-100 text-secondary-100 hover:bg-secondary-100 hover:text-white">

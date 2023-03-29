@@ -31,7 +31,9 @@ export const Header = () => {
         <div className="flex justify-items-center items-center py-1.5">
           <div className="w-2/12">
             <div className="text-start flex">
-              <img src={esgrimaLogo} className="w-16 p-1.5" alt="Esgrima Jedi Valparaíso" />
+              <a href="#top">
+                <img src={esgrimaLogo} className="w-16 p-1.5" alt="Esgrima Jedi Valparaíso" />
+              </a>
             </div>
           </div>
 

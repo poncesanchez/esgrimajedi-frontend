@@ -5,7 +5,7 @@ import Add from '@mui/icons-material/Add';
 export const Somos = () => {
   return (
     <section id="somos" className="relative">
-      <div className="container mx-auto py-20  lg:h-screen px-5 relative z-10">
+      <div className="container mx-auto py-20 lg:h-screen px-5 relative z-10 min-h-[500px]">
         <div className="grid grid-cols-12 gap-5 lg:h-screen items-center">
 
           <div className="col-span-12 md:col-span-6 relative sm:ml-10 mb-10 md:mb-0">
