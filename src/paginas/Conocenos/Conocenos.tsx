@@ -4,6 +4,7 @@ import imgRangoNivel from './../../assets/rango-ejemplo.svg';
 import { Divisor } from '../../componentes/Divisor/Divisor';
 
 export const Conocenos = () => {
+
   return (
     <section
       id="conocenos"

@@ -1,8 +1,28 @@
 import imgRango from './../../assets/rango.svg';
 import imgFondoSeccionSomos from './../../assets/fondo-seccion-somos.png';
 import Add from '@mui/icons-material/Add';
+import { useEffect, useState } from 'react';
+import RangosServices from './../../servicios/rangos';
 
 export const Somos = () => {
+
+  const [rangos, setRangos] = useState([{
+    id: 0,
+    name: ''
+  }]);
+
+  useEffect(() => {
+    cargarRangos();
+  }, []);
+
+  const cargarRangos = async () => {
+    const response = await RangosServices.getRangos();
+
+    if (response.status === 200) {
+      setRangos(response.data)
+    }
+  };
+
   return (
     <section id="somos" className="relative">
       <div className="container mx-auto py-20 lg:h-screen px-5 relative z-10 min-h-[500px]">
@@ -44,33 +64,15 @@ export const Somos = () => {
             <p className="text-white font-primary text-sm font-medium mb-5">Internamente nos organizamos en rangos según la expertíz y antigüedad.</p>
 
             <div className="grid grid-cols-12 my-8 sm:gap-8  md:gap-5">
-              <div className="col-span-12 sm:col-span-6 lg:col-span-3 text-center mb-6">
-                <div className="h-20 w-20 rounded-full border border-secondary-100 m-auto mb-1 sm:mb-2 flex text-center items-center justify-center">
-                  <img src={imgRango} className="w-12" alt="" />
-                </div>
-                <span className="font-secondary text-xs text-secondary-100 tracking-widest">INICIADOS</span>
-              </div>
 
-              <div className="col-span-12 sm:col-span-6 lg:col-span-3 text-center mb-6">
-                <div className="h-20 w-20 rounded-full border border-secondary-100 m-auto mb-1 sm:mb-2 flex text-center items-center justify-center">
-                  <img src={imgRango} className="w-12" alt="" />
+              {rangos.map((rango, index) =>
+                <div key={rango.id} className="col-span-12 sm:col-span-6 lg:col-span-3 text-center mb-6">
+                  <div className="h-20 w-20 rounded-full border border-secondary-100 m-auto mb-1 sm:mb-2 flex text-center items-center justify-center">
+                    <img src={imgRango} className="w-12" alt="" />
+                  </div>
+                  <span className="font-secondary text-xs text-secondary-100 tracking-widest">{rango.name}</span>
                 </div>
-                <span className="font-secondary text-xs text-secondary-100 tracking-widest">PADAWAN</span>
-              </div>
-
-              <div className="col-span-12 sm:col-span-6 lg:col-span-3 text-center mb-6">
-                <div className="h-20 w-20 rounded-full border border-secondary-100 m-auto mb-1 sm:mb-2 flex text-center items-center justify-center">
-                  <img src={imgRango} className="w-12" alt="" />
-                </div>
-                <span className="font-secondary text-xs text-secondary-100 tracking-widest">CABALLERO</span>
-              </div>
-
-              <div className="col-span-12 sm:col-span-6 lg:col-span-3 text-center mb-6">
-                <div className="h-20 w-20 rounded-full border border-secondary-100 m-auto mb-1 sm:mb-2 flex text-center items-center justify-center">
-                  <img src={imgRango} className="w-12" alt="" />
-                </div>
-                <span className="font-secondary text-xs text-secondary-100 tracking-widest">MAESTROS</span>
-              </div>
+              )}
 
               <div className="col-span-12">
                 <a href="#"
