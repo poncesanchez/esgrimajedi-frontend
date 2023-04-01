@@ -1,10 +1,40 @@
 import imgRango from './../../assets/rango.svg';
 import imgFondoSeccionConocenos from './../../assets/fondo-seccion-conocenos.png';
-import imgRangoNivel from './../../assets/rango-ejemplo.svg';
-import { Divisor } from '../../componentes/Divisor/Divisor';
-import { Add } from '@mui/icons-material';
+import { SeleccionFacciones } from './Facciones/SeleccionFacciones';
+import { useContext, useEffect } from 'react';
+import PersonasServices from '../../servicios/personas';
+import FaccionesServices from '../../servicios/facciones';
+import { ConocenosContext } from './context/ConocenosContext';
+import { Personajes } from './Personajes/Personajes';
 
 export const Conocenos = () => {
+
+  const { vista, setData } = useContext(ConocenosContext);
+
+  const getData = async () => {
+    const state = {
+      personas:[],
+      facciones:[],
+      vista: 'ELEGIR_FACCION'
+    };
+
+    const responsePersonas = await PersonasServices.getPersonas();
+    if(responsePersonas.status===200){
+      //setPersonas(responsePersonas.data);
+     state.personas = responsePersonas.data;
+    }
+
+    const responseFacciones = await FaccionesServices.getFacciones();
+    if(responseFacciones.status === 200){
+      state.facciones = responseFacciones.data;
+    }
+
+    setData(state);
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
 
   return (
     <section
@@ -39,74 +69,14 @@ export const Conocenos = () => {
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-12 gap-10 justify-center">
 
-          <div className="col-span-12 text-center">
-            <div className="font-secondary text-xs text-secondary-100 tracking-widest">
-              SELECCIONA UNA FACCION</div>
-          </div>
+        {vista === 'ELEGIR_FACCION' && 
+          <SeleccionFacciones />
+        }
 
-          <div className="col-span-12 xs:col-span-6 lg:col-span-4">
-            <div className="relative max-w-[280px] mx-auto">
-              <div className="absolute z-30 w-full h-full flex text-center items-center justify-center">
-                <div className="w-10 h-10 border border-secondary-100 text-secondary-100 hover:bg-secondary-100 hover:text-white">
-                  <Add className="mt-2" />
-                </div>
-              </div>
-              <div className="absolute z-40 bottom-0 w-full p-5">
-                <div className="text-center">
-                  <h3 className="text-secondary-100 font-primary font-black uppercase tracking-wider pb-0">Nombre Evento</h3>
-                </div>
-              </div>
-              <div className="square-border w-full h-96 absolute z-20"></div>
-              <div className="absolute z-10 w-full h-full bg-gradient-to-b from-transparent to-primary-100"></div>
-              <div
-                style={{ backgroundImage: `url(https://sm.ign.com/t/ign_es/feature/r/ranking-th/ranking-the-star-wars-movies-from-worst-to-best_hauh.1200.jpg)` }}
-                className="square bg-primary-90 w-full h-96 z-0 bg-no-repeat bg-cover bg-center"></div> {/* bg de foto aquí */}
-            </div>
-          </div>
-
-          <div className="col-span-12 sm:col-span-6 lg:col-span-4">
-            <div className="relative max-w-[280px] mx-auto">
-              <div className="absolute z-30 w-full h-full flex text-center items-center justify-center">
-                <div className="w-10 h-10 border border-secondary-100 text-secondary-100 hover:bg-secondary-100 hover:text-white">
-                  <Add className="mt-2" />
-                </div>
-              </div>
-              <div className="absolute z-40 bottom-0 w-full p-5">
-                <div className="text-center">
-                  <h3 className="text-secondary-100 font-primary font-black uppercase tracking-wider pb-0">Nombre Evento</h3>
-                </div>
-              </div>
-              <div className="square-border w-full h-96 absolute z-20"></div>
-              <div className="absolute z-10 w-full h-full bg-gradient-to-b from-transparent to-primary-100"></div>
-              <div
-                style={{ backgroundImage: `url(https://cdn.businessinsider.es/sites/navi.axelspringer.es/public/media/image/2021/04/todas-peliculas-star-wars-clasificadas-peor-mejor-publico-2316225.jpg)` }}
-                className="square bg-primary-90 w-full h-96 z-0 bg-no-repeat bg-cover bg-center"></div> {/* bg de foto aquí */}
-            </div>
-          </div>
-
-          <div className="col-span-12 sm:col-span-6 lg:col-span-3 col-start-4">
-            <div className="relative max-w-[280px] mx-auto">
-              <div className="absolute z-30 w-full h-full flex text-center items-center justify-center">
-                <div className="w-10 h-10 border border-secondary-100 text-secondary-100 hover:bg-secondary-100 hover:text-white">
-                  <Add className="mt-2" />
-                </div>
-              </div>
-              <div className="absolute z-40 bottom-0 w-full p-5">
-                <div className="text-center">
-                  <h3 className="text-secondary-100 font-primary font-black uppercase tracking-wider pb-0">Nombre Evento</h3>
-                </div>
-              </div>
-              <div className="square-border w-full h-96 absolute z-20"></div>
-              <div className="absolute z-10 w-full h-full bg-gradient-to-b from-transparent to-primary-100"></div>
-              <div
-                style={{ backgroundImage: `url(https://m.media-amazon.com/images/M/MV5BZWFlNzRmOTItZjY1Ni00ZjZkLTk5MDgtOGFhOTYzNWFhYzhmXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_FMjpg_UX1000_.jpg)` }}
-                className="square bg-primary-90 w-full h-96 z-0 bg-no-repeat bg-cover bg-center"></div> {/* bg de foto aquí */}
-            </div>
-          </div>
-
-        </div>
+        {vista === 'PERSONAJES' && 
+          <Personajes />
+        }
       </div>
     </section>
   )

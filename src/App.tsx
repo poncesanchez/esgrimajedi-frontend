@@ -1,6 +1,7 @@
 import { Footer } from './componentes/Footer/Footer'
 import { Header } from './componentes/Header/Header'
 import { Conocenos } from './paginas/Conocenos/Conocenos'
+import { ConocenosProvider } from './paginas/Conocenos/context/ConocenosProvider'
 import { Home } from './paginas/Home/Home'
 import { Multimedia } from './paginas/Multimedia/Multimedia'
 import { Somos } from './paginas/Somos/Somos'
@@ -12,7 +13,9 @@ function App() {
       <Header />
       <Home />
       <Somos />
-      <Conocenos />
+      <ConocenosProvider>
+        <Conocenos />
+      </ConocenosProvider>
       <Multimedia />
       <Unete />
       <Footer />
