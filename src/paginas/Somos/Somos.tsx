@@ -63,10 +63,9 @@ export const Somos = () => {
             <p className="text-white font-primary text-sm font-medium mb-5">Un grupo de fans de starwars que se dedica a la práctica de la esgrima con sables de luz, y recreación de peleas de starwars con el objetivo de realizar coreografías y posteriormente presentarlas en diversos eventos donde somos organización invitada.</p>
             <p className="text-white font-primary text-sm font-medium mb-5">Internamente nos organizamos en rangos según la expertíz y antigüedad.</p>
 
-            <div className="grid grid-cols-12 my-8 sm:gap-8  md:gap-5">
-
+            <div className="grid grid-cols-12 lg:grid-cols-10 my-8 sm:gap-8  md:gap-5">
               {rangos.map((rango, index) =>
-                <div key={rango.id} className="col-span-12 sm:col-span-6 lg:col-span-3 text-center mb-6">
+                <div key={rango.id} className="col-span-12 sm:col-span-6 lg:col-span-2 text-center mb-6">
                   <div className="h-20 w-20 rounded-full border border-secondary-100 m-auto mb-1 sm:mb-2 flex text-center items-center justify-center">
                     <img src={imgRango} className="w-12" alt="" />
                   </div>
