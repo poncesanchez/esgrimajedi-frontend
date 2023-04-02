@@ -7,6 +7,11 @@ export const ConocenosReducer = ( state, action ) => {
       ...state,
       ...action.payload
     };
+    case "SET_PERSONA_SELECCIONADA":
+      return {
+        ...state,
+        personaSeleccionada: action.payload
+      };
 
 
     //chatgtp
@@ -35,11 +40,7 @@ export const ConocenosReducer = ( state, action ) => {
         ...state,
         personasFaccion: action.payload
       };
-    case "SET_PERSONA_SELECCIONADA":
-      return {
-        ...state,
-        personaSeleccionada: action.payload
-      };
+    
 
     default:
       return state;

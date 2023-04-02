@@ -29,12 +29,19 @@ export const ConocenosProvider = ({ children }) => {
     });
   }
 
+  const setPersonaSeleccionada = ( persona ) => {
+    dispatch({ 
+      type : 'SET_PERSONA_SELECCIONADA', 
+      payload: persona 
+    });
+  };
+
 
   const handleFaccionElegida = ( faccion ) => {
     const personasFaccion = [];
     for (let index = 0; index < state.personas.length; index++) {
       const persona = state.personas[index];
-      const personaEnFaccion = persona.characters.find( fac => fac.faction === 1);
+      const personaEnFaccion = persona.characters.find( fac => fac.faction === faccion.id);
       if(personaEnFaccion){
         personasFaccion.push({
           ...persona,
@@ -49,9 +56,19 @@ export const ConocenosProvider = ({ children }) => {
       personasFaccion: personasFaccion,
       personaSeleccionada: personasFaccion.length > 0 ? personasFaccion[0] : {}
     }
-
+    console.log(data);
     setData(data);
   }
+
+  const handleReset = () => {
+    const data = {
+      vista: 'ELEGIR_FACCION',
+      faccionSeleccionada: {},
+      personasFaccion:[],
+      personaSeleccionada:{}
+    }
+    setData(data);
+  };
 
 
   return(
@@ -61,9 +78,11 @@ export const ConocenosProvider = ({ children }) => {
 
         setVista,
         setData,
+        setPersonaSeleccionada,
 
         //handlers
-        handleFaccionElegida
+        handleFaccionElegida,
+        handleReset
       }}
     >
       { children }
