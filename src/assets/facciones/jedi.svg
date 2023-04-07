@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="240" height="240" viewBox="0 0 240 240">
+  <defs>
+    <filter id="jedi-order-svgrepo-com" x="39.182" y="32.784" width="161.635" height="161.635" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-color="#036cf5"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <clipPath id="clip-jedi">
+      <rect width="240" height="240"/>
+    </clipPath>
+  </defs>
+  <g id="jedi" clip-path="url(#clip-jedi)">
+    <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#jedi-order-svgrepo-com)">
+      <path id="jedi-order-svgrepo-com-2" data-name="jedi-order-svgrepo-com" d="M74.735,3S72.94,71.66,72.2,99.838L62.133,85.126l6.475,17.787-20.066,2.918,20.066,2.918-7.755,15.195,11.054-11.6c-.575,22.053-.707,27.472-.707,27.472S21.71,116.83,49.216,66.048c0,0-34.3-37.869-3.232-61.14,0,0-53.051,32.036-19.392,87.041,0,0-27.83-27.182-13.276-54.653,0,0-25.225,35.578,5.521,74.719,0,0-8.4-5.154-15.835-24.9,0,0,5.411,58.759,71.161,59.523h1.313c65.71-.758,71.161-59.512,71.161-59.512-7.567,19.714-15.992,24.9-15.992,24.9,30.74-39.141,5.51-74.719,5.51-74.719C150.71,64.812,122.879,91.96,122.879,91.96,156.539,36.983,103.487,4.93,103.487,4.93c31.062,23.305-3.232,61.128-3.232,61.128,27.505,50.776-21.984,73.765-21.984,73.765s-.127-5.42-.707-27.472c1.379,1.442,11.054,11.6,11.054,11.6L80.863,108.76l20.077-2.918-20.077-2.918,6.476-17.787L77.272,99.849C76.559,71.729,74.77,3.575,74.735,3Z" transform="translate(45.18 38.78)" fill="#fff"/>
+    </g>
+  </g>
+</svg>
