@@ -1,5 +1,7 @@
 import bgHome from './images/bg-home.png';
+import bgHome2 from './images/bg-home-2.png';
 import esgrimaJediValparaiso from './../../assets/esgrimajedi-valparaiso-logo.svg';
+
 
 export const Home = () => {
   return (
@@ -21,7 +23,7 @@ export const Home = () => {
         </div>
       </div>
       <div
-        style={{ backgroundImage: `url(${bgHome})` }}
+        style={{ backgroundImage: `url(${bgHome2})` }}
         className="h-screen bg-no-repeat bg-center bg-cover absolute w-full top-0 left-0 right-0 bottom-0 z-0 opacity-20 sm:opacity-60 md:opacity-100"></div>
     </section>
   )

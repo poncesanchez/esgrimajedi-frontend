@@ -12,6 +12,11 @@ interface FactionImages {
   };
 }
 
+interface SOCIAL {
+  INSTAGRAM: string;
+  FACEBOOK: string;
+}
+
 export const DEFINITION = {
   FACTION_IMAGES : {
     'JEDI': {
@@ -26,5 +31,11 @@ export const DEFINITION = {
       NORMAL: neutral,
       HOVER:  neutralHover,
     }
-  } as FactionImages
+  } as FactionImages,
+
+
+  SOCIAL : {
+    INSTAGRAM: 'https://www.instagram.com/esgrimajedivalpo/',
+    FACEBOOK: 'https://www.facebook.com/esgrimajedivalpo',
+  } as SOCIAL,
 }

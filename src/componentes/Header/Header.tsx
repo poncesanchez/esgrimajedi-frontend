@@ -1,6 +1,7 @@
 import { Facebook, Instagram, MailOutline, Menu } from "@mui/icons-material"
 import { useEffect, useState } from "react";
 import esgrimaLogo from './../../assets/esgrima-logo.svg'
+import { DEFINITION } from "./../../config/definitions";
 
 export const Header = () => {
 
@@ -60,12 +61,12 @@ export const Header = () => {
               <div className="w-3/12 text-end">
                 <div className="text-white">
                   <span className="m-3">
-                    <a href="#">
+                    <a href={DEFINITION.SOCIAL.INSTAGRAM} target="_blank">
                       <Instagram />
                     </a>
                   </span>
                   <span className="m-3">
-                    <a href="#">
+                    <a href={DEFINITION.SOCIAL.FACEBOOK} target="_blank">
                       <Facebook />
                     </a>
                   </span>
@@ -79,12 +80,12 @@ export const Header = () => {
               <div className="w-12/12 flex items-center">
                 <div className="text-white py-4 mr-4">
                   <span className="m-4">
-                    <a href="#">
+                    <a href={DEFINITION.SOCIAL.INSTAGRAM} target="_blank">
                       <Instagram />
                     </a>
                   </span>
                   <span className="m-4">
-                    <a href="#">
+                    <a href={DEFINITION.SOCIAL.FACEBOOK} target="_blank">
                       <Facebook />
                     </a>
                   </span>

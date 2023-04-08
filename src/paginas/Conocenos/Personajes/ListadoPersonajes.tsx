@@ -37,6 +37,10 @@ export const ListadoPersonajes = () => {
               slidesPerView:8,
               spaceBetween: 40,
             },
+            1280:{
+              slidesPerView:10,
+              spaceBetween: 40,
+            }
           }}
         >
           {personasFaccion.map(( persona : personaType , index : number ) => {

@@ -15,8 +15,6 @@ export const DetallePersonaje = () => {
     isLoadingPersona : boolean
   } = useContext(ConocenosContext);
 
-  console.log(personaSeleccionada);
-
   return(
     <div className="col-span-12 lg:col-span-6 relative">
       <div className={`absolute w-full flex flex-col sm:flex-row h-[400px] transition ease-in

@@ -1,5 +1,6 @@
 import { Facebook, Instagram, MailOutline } from "@mui/icons-material"
 import imgEsgrimaJedi from './../../assets/esgrima-jedi-chile-blanco.svg'
+import { DEFINITION } from "./../../config/definitions";
 
 export const Footer = () => {
    return (
@@ -46,12 +47,12 @@ export const Footer = () => {
             <div className="grid grid-cols-12 gap-6 items-center">
                <div className="col-span-12 text-center text-white">
                   <span className="m-3 inline-block">
-                     <a href="#">
+                    <a href={DEFINITION.SOCIAL.INSTAGRAM} target="_blank">
                         <Instagram />
                      </a>
                   </span>
                   <span className="m-3 inline-block">
-                     <a href="#">
+                    <a href={DEFINITION.SOCIAL.FACEBOOK} target="_blank">
                         <Facebook />
                      </a>
                   </span>
