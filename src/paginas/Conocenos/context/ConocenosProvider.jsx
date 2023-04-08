@@ -9,7 +9,8 @@ const INITIAL_STATE = {
   facciones: [],
   faccionSeleccionada:{},
   personasFaccion:[],
-  personaSeleccionada:{}
+  personaSeleccionada:{},
+  isLoadingPersona: false,
 }
 
 export const ConocenosProvider = ({ children }) => {
@@ -36,6 +37,13 @@ export const ConocenosProvider = ({ children }) => {
     });
   };
 
+  const setIsLoadingPersona = (isLoadingPersona) => {
+    dispatch({ 
+      type : 'SET_IS_LOADING_PERSONA', 
+      payload: isLoadingPersona 
+    });
+  }
+
 
   const handleFaccionElegida = ( faccion ) => {
     const personasFaccion = [];
@@ -56,7 +64,7 @@ export const ConocenosProvider = ({ children }) => {
       personasFaccion: personasFaccion,
       personaSeleccionada: personasFaccion.length > 0 ? personasFaccion[0] : {}
     }
-    console.log(data);
+    handlePersonaSeleccionada(personasFaccion.length > 0 ? personasFaccion[0] : {});
     setData(data);
   }
 
@@ -70,6 +78,13 @@ export const ConocenosProvider = ({ children }) => {
     setData(data);
   };
 
+  const handlePersonaSeleccionada = (persona) => {
+    setIsLoadingPersona(true);
+    setTimeout(() => {
+      setPersonaSeleccionada(persona);
+     setIsLoadingPersona(false);
+    }, 400);  
+  };
 
   return(
     <ConocenosContext.Provider
@@ -82,7 +97,8 @@ export const ConocenosProvider = ({ children }) => {
 
         //handlers
         handleFaccionElegida,
-        handleReset
+        handleReset,
+        handlePersonaSeleccionada
       }}
     >
       { children }

@@ -3,7 +3,7 @@ import { ConocenosContext } from "../context/ConocenosContext"
 import { DEFINITION } from "./../../../config/definitions";
 import { FaccionItemType } from './FaccionItemType';
 
-export const Faccion = ({ data } : FaccionItemType ) => {
+export const Faccion = ({ data }: FaccionItemType) => {
 
   const { handleFaccionElegida } = useContext(ConocenosContext);
   const [ isOver, setIsOver ] = useState(false);

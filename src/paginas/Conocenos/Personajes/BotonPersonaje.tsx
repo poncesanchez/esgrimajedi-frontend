@@ -11,21 +11,20 @@ export const BotonPersonaje = ({
 }) => {
 
   const { 
-    setPersonaSeleccionada, 
+    handlePersonaSeleccionada,
     personaSeleccionada 
 } = useContext(ConocenosContext);
 
   return(
     <button 
-      onClick={() => setPersonaSeleccionada(persona)}
+      onClick={() => handlePersonaSeleccionada(persona)}
       key={index}>
       <div 
         className={`
-          w-20 h-20 border border-primary-80 bg-no-repeat bg-center bg-cover
-          ${personaSeleccionada.id ===  persona.id ? 'border-secondary-100 opacity-100' : 'opacity-40' }
+          w-20 h-20 border border-primary-80 bg-no-repeat bg-center bg-cover hover:opacity-60
+          ${personaSeleccionada.id ===  persona.id ? 'border-secondary-100 !opacity-100' : 'opacity-40' }
         `}
-        style={{ backgroundImage: 
-            `url(https://sm.ign.com/t/ign_es/feature/r/ranking-th/ranking-the-star-wars-movies-from-worst-to-best_hauh.1200.jpg)`
+        style={{ backgroundImage: `url(${persona.image})`
         }}></div>
     </button>
   )

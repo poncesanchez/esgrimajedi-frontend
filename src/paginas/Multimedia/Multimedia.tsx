@@ -1,8 +1,20 @@
 import Mms from '@mui/icons-material/Mms';
 import Add from '@mui/icons-material/Add';
 import imgFondoSeccionMultimedia from './../../assets/fondo-seccion-multimedia.png';
+import { useEffect } from 'react';
+import instagramServices from './../../servicios/instagram';
 
 export const Multimedia = () => {
+
+  const cargarPosts = async () => {
+    const response = await instagramServices.getPosts();
+    console.log(response.data.data);
+  };
+
+  useEffect(() => {
+    cargarPosts();
+  }, []);
+
   return (
     <section id="multimedia"
       style={{ backgroundImage: `url(${imgFondoSeccionMultimedia})` }}

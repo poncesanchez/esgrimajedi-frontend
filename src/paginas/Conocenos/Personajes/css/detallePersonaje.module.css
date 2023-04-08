@@ -1,0 +1,10 @@
+.historia{
+  @apply text-primary-40 font-primary text-sm font-medium
+}
+.historia p{
+  @apply mb-5 text-primary-30 font-primary text-sm font-medium pr-4 leading-5
+}
+.historia p b,
+.historia p strong{
+  @apply text-white font-bold font-primary text-sm 
+}

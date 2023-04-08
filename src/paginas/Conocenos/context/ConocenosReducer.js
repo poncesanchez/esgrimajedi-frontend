@@ -6,11 +6,18 @@ export const ConocenosReducer = ( state, action ) => {
     return {
       ...state,
       ...action.payload
-    };
+      };
+    
     case "SET_PERSONA_SELECCIONADA":
       return {
         ...state,
         personaSeleccionada: action.payload
+      };
+
+    case 'SET_IS_LOADING_PERSONA':
+      return{
+        ...state,
+        isLoadingPersona: action.payload
       };
 
 
