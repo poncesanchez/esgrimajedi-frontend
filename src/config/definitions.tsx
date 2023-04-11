@@ -38,4 +38,8 @@ export const DEFINITION = {
     INSTAGRAM: 'https://www.instagram.com/esgrimajedivalpo/',
     FACEBOOK: 'https://www.facebook.com/esgrimajedivalpo',
   } as SOCIAL,
+
+  INSTRAGRAM_API: {
+    PER_PAGE: 4
+  }
 }
