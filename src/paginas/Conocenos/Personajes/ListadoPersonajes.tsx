@@ -10,7 +10,7 @@ import 'swiper/css/navigation';
 
 export const ListadoPersonajes = () => {
 
-  const { 
+  const {
     personasFaccion,
 } = useContext(ConocenosContext);
 
