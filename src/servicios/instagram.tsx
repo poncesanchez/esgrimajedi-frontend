@@ -1,7 +1,8 @@
+import CONFIG from "../config";
 import Axios from "./api";
 
-const USER_ID = "6010035992379319";
-const TOKEN   = "";
+const USER_ID = CONFIG.INSTAGRAM_USER || '';
+const TOKEN   =  CONFIG.INSTAGRAM_TOKEN || '';
 
 const instagramServices = {
 
