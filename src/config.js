@@ -1,10 +1,7 @@
-import getEnv from 'helpers/getEnv';
-
-const CONFIG = {
-  baseURL:  getEnv('REACT_APP_API_URL') || '',
-  INSTAGRAM_TOKEN: getEnv('REACT_APP_INSTAGRAM_TOKEN') || '',
-  INSTAGRAM_USER: getEnv('REACT_APP_INSTAGRAM_USER') || ''
+const ENV_CONFIG = {
+  baseURL: import.meta.env.VITE_API_URL || '',
+  INSTAGRAM_TOKEN: import.meta.env.VITE_INSTAGRAM_TOKEN || '',
+  INSTAGRAM_USER: import.meta.env.VITE_INSTAGRAM_USER || ''
 };
 
-
-export default CONFIG;
+export default ENV_CONFIG;

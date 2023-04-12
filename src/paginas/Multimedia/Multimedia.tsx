@@ -12,13 +12,13 @@ import DialogContentText from '@mui/material/DialogContentText';
 
 export const Multimedia = () => {
   /*  LOGICA POSTS INSTAGRAM  */
-  const [ posts, setPosts ] = useState({
+  const [posts, setPosts] = useState({
     current: [],
     all: [],
     seleccionado: {
       media_type: '',
       media_url: '',
-      caption : '',
+      caption: '',
       permalink: ''
     },
     indexInicial: 0,
@@ -35,8 +35,8 @@ export const Multimedia = () => {
   };
 
   const cargarPrevios = () => {
-    const newInicial = posts.indexInicial-4;
-    const newFinal = posts.indexFinal-4;
+    const newInicial = posts.indexInicial - 4;
+    const newFinal = posts.indexFinal - 4;
 
     setPosts({
       ...posts,
@@ -48,7 +48,7 @@ export const Multimedia = () => {
 
   const cargarSiguientes = () => {
     const newInicial = posts.indexFinal;
-    const newFinal = posts.indexFinal+4;
+    const newFinal = posts.indexFinal + 4;
 
     setPosts({
       ...posts,
@@ -65,7 +65,7 @@ export const Multimedia = () => {
 
   /*  MODAL  */
   const [open, setOpen] = useState(false);
-  const handleClickOpen = (postSeleccionado : instagramPost) => {
+  const handleClickOpen = (postSeleccionado: instagramPost) => {
     setPosts({
       ...posts,
       seleccionado: postSeleccionado
@@ -80,7 +80,7 @@ export const Multimedia = () => {
       seleccionado: {
         media_type: '',
         media_url: '',
-        caption : '',
+        caption: '',
         permalink: ''
       }
     });
@@ -119,7 +119,7 @@ export const Multimedia = () => {
             </div>
           </div>
         </div>
-       
+
         <div className="grid grid-cols-12 gap-5 items-center px-20 relative">
           {posts.indexFinal > 4 &&
             <div className="absolute left-0">
@@ -131,26 +131,26 @@ export const Multimedia = () => {
             </div>
           }
 
-          {posts.current.map(( post : instagramPost ) => 
+          {posts.current.map((post: instagramPost) =>
             <div className="col-span-12 xs:col-span-6 lg:col-span-3">
               <div className="relative mx-4">
                 <div className="absolute z-30 w-full h-full flex text-center items-center justify-center">
-                  <button 
+                  <button
                     onClick={() => handleClickOpen(post)}
                     className="w-10 h-10 border border-secondary-100 text-secondary-100 hover:bg-secondary-100 hover:text-white shadow-md">
-                    <Add className="-mt-1"/>
+                    <Add className="-mt-1" />
                   </button>
                 </div>
                 <div className="square-border w-full h-96 absolute z-20"></div>
                 <div className="absolute z-10 w-full h-full bg-gradient-to-b from-transparent to-primary-100"></div>
                 <div
-                  style={{ backgroundImage: `url(${post.media_type === 'VIDEO' ? post.thumbnail_url : post.media_url  })` }}
+                  style={{ backgroundImage: `url(${post.media_type === 'VIDEO' ? post.thumbnail_url : post.media_url})` }}
                   className="square bg-primary-90 w-full h-96 z-0 bg-no-repeat bg-cover bg-center"></div>
               </div>
             </div>
           )}
 
-          {posts.indexInicial < 36 && 
+          {posts.indexInicial < 36 &&
             <div className="absolute right-0">
               <button className="rounded-full" onClick={() => cargarSiguientes()}>
                 <span className="h-12 w-12 rounded-full border-2 border-secondary-100 mx-auto text-secondary-100 inline-flex items-center justify-center bg-primary-100 hover:bg-secondary-100 hover:text-primary-100 shadow-lg">
@@ -159,24 +159,24 @@ export const Multimedia = () => {
               </button>
             </div>
           }
-          
-          <Dialog open={open} onClose={handleClose} maxWidth={posts.seleccionado.media_type === 'VIDEO' ? "lg" :  "lg"}>
+
+          <Dialog open={open} onClose={handleClose} maxWidth={posts.seleccionado.media_type === 'VIDEO' ? "md" : "md"}>
             <DialogContent className="!p-0">
               <DialogContentText>
                 <div className="grid grid-cols-12 min-h-[80vh]">
-                    {posts.seleccionado.media_type === 'VIDEO' &&
-                      <div className="col-span-7 flex bg-black items-center">
-                          <video width="100%" height="100%" autoPlay controls className="max-h-[80vh] mx-auto">
-                            <source src={posts.seleccionado.media_url} type='video/mp4' />
-                          </video>
-                      </div>
-                    }
+                  {posts.seleccionado.media_type === 'VIDEO' &&
+                    <div className="col-span-7 flex bg-black items-center">
+                      <video width="100%" height="100%" autoPlay controls className="max-h-[80vh] mx-auto">
+                        <source src={posts.seleccionado.media_url} type='video/mp4' />
+                      </video>
+                    </div>
+                  }
 
-                    {posts.seleccionado.media_type === 'IMAGE' &&
-                      <div className="col-span-8 bg-black flex">
-                        <img src={posts.seleccionado.media_url} alt="" className="max-h-[80vh] mx-auto" />
-                      </div>
-                    }
+                  {posts.seleccionado.media_type === 'IMAGE' &&
+                    <div className="col-span-8 bg-black flex">
+                      <img src={posts.seleccionado.media_url} alt="" className="max-h-[80vh] mx-auto" />
+                    </div>
+                  }
 
                   <div className={posts.seleccionado.media_type === 'VIDEO' ? "col-span-5 p-6 font-primary" : "col-span-4 p-6 font-primary"}>
                     <p className="mb-4 text-sm">{posts.seleccionado.caption}</p>
