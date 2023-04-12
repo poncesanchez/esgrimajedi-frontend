@@ -8,9 +8,11 @@ export interface instagramPost {
   timestamp : string,
   children: {
     data: [
-      id: string,
-      media_type: string,
-      media_url: string
+      {
+        id: string,
+        media_type: string,
+        media_url: string
+      }
     ]
   }
 }

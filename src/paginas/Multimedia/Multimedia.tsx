@@ -2,13 +2,18 @@ import Mms from '@mui/icons-material/Mms';
 import Add from '@mui/icons-material/Add';
 import imgFondoSeccionMultimedia from './../../assets/fondo-seccion-multimedia.png';
 import instagramServices from './../../servicios/instagram';
-import { useEffect, useState } from 'react';
-import { ChevronLeft, ChevronRight, Instagram } from '@mui/icons-material';
-import { DEFINITION } from './../../config/definitions';
-import { instagramPost } from './MultimediaType';
 import Dialog from '@mui/material/Dialog';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
+import styles from './css/multimedia.module.css';
+import { useEffect, useState } from 'react';
+import { ChevronLeft, ChevronRight, Close, Instagram } from '@mui/icons-material';
+import { DEFINITION } from './../../config/definitions';
+import { instagramPost } from './MultimediaType';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination } from 'swiper';
+import 'swiper/css';
+import 'swiper/css/pagination';
 
 export const Multimedia = () => {
   /*  LOGICA POSTS INSTAGRAM  */
@@ -19,7 +24,17 @@ export const Multimedia = () => {
       media_type: '',
       media_url: '',
       caption: '',
-      permalink: ''
+      permalink: '',
+      id: '',
+      children: {
+        data: [
+          {
+            id: '',
+            media_type: '',
+            media_url: ''
+          }
+        ]
+      }
     },
     indexInicial: 0,
     indexFinal: DEFINITION.INSTRAGRAM_API.PER_PAGE
@@ -34,7 +49,7 @@ export const Multimedia = () => {
     });
   };
 
-  const cargarPrevios = () => {
+  const cargarPostsPrevios = () => {
     const newInicial = posts.indexInicial - 4;
     const newFinal = posts.indexFinal - 4;
 
@@ -46,7 +61,7 @@ export const Multimedia = () => {
     })
   };
 
-  const cargarSiguientes = () => {
+  const cargarPostsSiguientes = () => {
     const newInicial = posts.indexFinal;
     const newFinal = posts.indexFinal + 4;
 
@@ -70,7 +85,6 @@ export const Multimedia = () => {
       ...posts,
       seleccionado: postSeleccionado
     });
-    console.log(postSeleccionado);
     setOpen(true);
   };
   const handleClose = () => {
@@ -81,9 +95,50 @@ export const Multimedia = () => {
         media_type: '',
         media_url: '',
         caption: '',
-        permalink: ''
+        permalink: '',
+        id: '',
+        children: {
+          data: [
+            {
+              id: '',
+              media_type: '',
+              media_url: ''
+            }
+          ]
+        }
       }
     });
+  };
+
+  const postPrevio = (idPost : string) => {
+    const index = posts.all.findIndex(( item : instagramPost ) => item.id === idPost);
+    if((index - 1) < 0 ) { 
+      return
+    }
+    const postNuevo = posts.all[(index - 1)];
+    setPosts({
+      ...posts,
+      seleccionado: postNuevo
+    });
+  };
+
+  const postSiguiente = (idPost: string) => {
+    const index = posts.all.findIndex(( item : instagramPost ) => item.id === idPost);
+    if((index + 1) > posts.all.length) { 
+      return
+    }
+    const postNuevo = posts.all[(index + 1)];
+    setPosts({
+      ...posts,
+      seleccionado: postNuevo
+    });
+  };
+
+  const pagination = {
+    clickable: true,
+    renderBullet: function (index : number , className : string) {
+      return '<span class="w-5 h-5 inline-block bg-secondary-100 border-2 border-white rounded-full shadow-lg '+ className+'"></span>';
+    },
   };
 
 
@@ -122,8 +177,9 @@ export const Multimedia = () => {
 
         <div className="grid grid-cols-12 gap-5 items-center px-20 relative">
           {posts.indexFinal > 4 &&
+          posts.seleccionado.permalink === '' &&
             <div className="absolute left-0">
-              <button className="rounded-full" onClick={() => cargarPrevios()}>
+              <button className="rounded-full" onClick={() => cargarPostsPrevios()}>
                 <span className="h-12 w-12 rounded-full border-2 border-secondary-100 mx-auto text-secondary-100 inline-flex items-center justify-center bg-primary-100 hover:bg-secondary-100 hover:text-primary-100 shadow-lg">
                   <ChevronLeft />
                 </span>
@@ -151,8 +207,9 @@ export const Multimedia = () => {
           )}
 
           {posts.indexInicial < 36 &&
+            posts.seleccionado.permalink === '' &&
             <div className="absolute right-0">
-              <button className="rounded-full" onClick={() => cargarSiguientes()}>
+              <button className="rounded-full" onClick={() => cargarPostsSiguientes()}>
                 <span className="h-12 w-12 rounded-full border-2 border-secondary-100 mx-auto text-secondary-100 inline-flex items-center justify-center bg-primary-100 hover:bg-secondary-100 hover:text-primary-100 shadow-lg">
                   <ChevronRight />
                 </span>
@@ -160,51 +217,88 @@ export const Multimedia = () => {
             </div>
           }
 
-          <Dialog open={open} onClose={handleClose} maxWidth={posts.seleccionado.media_type === 'VIDEO' ? "md" : "md"}>
-            <DialogContent className="!p-0">
-              <DialogContentText>
-                <div className="grid grid-cols-12 min-h-[80vh]">
-                  {posts.seleccionado.media_type === 'VIDEO' &&
-                    <div className="col-span-7 flex bg-black items-center">
-                      <video width="100%" height="100%" autoPlay controls className="max-h-[80vh] mx-auto">
-                        <source src={posts.seleccionado.media_url} type='video/mp4' />
-                      </video>
-                    </div>
-                  }
+          <Dialog 
+            open={open} 
+            onClose={handleClose} 
+            maxWidth={posts.seleccionado.media_type === 'VIDEO' ? "md" : "md"}
+            classes={{
+              root: styles.root,
+              paper: styles.paper
+            }}
+          >  
+            <div className="relative flex items-center">
+              <div className="absolute -left-5 z-20">
+                <button className="rounded-full" onClick={() => postPrevio(posts.seleccionado.id)}>
+                  <span className="h-10 w-10 rounded-full border-2 border-primary-100 mx-auto text-primary-100 inline-flex items-center justify-center bg-white hover:bg-secondary-100 hover:border-secondary-100  hover:text-white shadow-lg">
+                    <ChevronLeft />
+                  </span>
+                </button>
+              </div>
+              <DialogContent className="!p-0 relative z-10">
+                <DialogContentText>
+                  <div className="grid grid-cols-12 min-h-[80vh] relative">
 
-                  {posts.seleccionado.media_type === 'IMAGE' &&
-                    <div className="col-span-8 bg-black flex">
-                      <img src={posts.seleccionado.media_url} alt="" className="max-h-[80vh] mx-auto" />
-                    </div>
-                  }
+                    {posts.seleccionado.media_type === 'VIDEO' &&
+                      <div className="col-span-7 flex bg-black items-center h-full">
+                        <video width="100%" height="100%" controls className="max-h-[80vh] mx-auto">
+                          <source src={posts.seleccionado.media_url} type='video/mp4' />
+                        </video>
+                      </div>
+                    }
 
-                  <div className={posts.seleccionado.media_type === 'VIDEO' ? "col-span-5 p-6 font-primary" : "col-span-4 p-6 font-primary"}>
-                    <p className="mb-4 text-sm">{posts.seleccionado.caption}</p>
-                    <a href={posts.seleccionado.permalink} target="_blank" className="border-2 border-secondary-100 py-2 px-4 inline-block text-black hover:bg-secondary-100 hover:text-white text-sm font-semibold">Ver más <Instagram /></a>
+                    {posts.seleccionado.media_type === 'IMAGE' &&
+                      <div className="col-span-7 bg-black flex h-full">
+                        <img src={posts.seleccionado.media_url} alt="" className="max-h-[80vh] m-auto" />
+                      </div>
+                    }
+
+                    {posts.seleccionado.media_type === 'CAROUSEL_ALBUM' &&
+                      <div className="col-span-7 bg-black flex h-full items-center">
+                        <Swiper
+                          spaceBetween={0}
+                          pagination={pagination}
+                          modules={[Pagination]}
+                        >
+                          {posts.seleccionado.children.data.map(( childrenPost ) => {
+                            return (
+                              <SwiperSlide>
+                                <img src={childrenPost.media_url} alt="" className="max-h-[80vh] m-auto" />
+                              </SwiperSlide>
+                            )
+                          })}
+                        </Swiper>
+                      </div>
+                    }
+
+                    <div className={posts.seleccionado.media_type === 'VIDEO' 
+                      ? "col-span-5 p-10 font-primary h-full" 
+                      : "col-span-5 p-10 font-primary h-full"
+                    }>
+                      <p className="mb-4 text-sm text-black">{posts.seleccionado.caption}</p>
+                      <a href={posts.seleccionado.permalink} target="_blank" className="border-2 border-secondary-100 py-2 px-4 inline-block text-black hover:bg-secondary-100 hover:text-white text-sm font-semibold">Ver más <Instagram /></a>
+                    </div>
                   </div>
-                </div>
-              </DialogContentText>
-            </DialogContent>
+                </DialogContentText>
+              </DialogContent>
+              <div className="absolute -top-5 -right-5 z-20">
+                <button className="rounded-full" onClick={handleClose}>
+                  <span className="h-10 w-10 rounded-full  mx-auto text-secondary-100 inline-flex items-center justify-center bg-primary-90 hover:bg-secondary-100 hover:border-secondary-100  hover:text-white shadow-lg">
+                    <Close />
+                  </span>
+                </button>
+              </div>
+              
+              <div className="absolute -right-5 z-20">
+                <button className="rounded-full" onClick={() => postSiguiente(posts.seleccionado.id)}>
+                  <span className="h-10 w-10 rounded-full border-2 border-primary-100 mx-auto text-primary-100 inline-flex items-center justify-center bg-white hover:bg-secondary-100 hover:border-secondary-100  hover:text-white shadow-lg">
+                    <ChevronRight />
+                  </span>
+                </button>
+              </div>
+            </div>
           </Dialog>
         </div>
       </div>
     </section>
   )
 };
-
-
-
-/* "children": {
-  "data": [
-      {
-          "media_type": "IMAGE",
-          "media_url": "https://scontent.cdninstagram.com/v/t51.29350-15/326785704_621823069723936_4474880579472686139_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=8ae9d6&_nc_ohc=Qvm5muapfokAX8yhKal&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AfBpGZyTG3e1vXqa1QD25ta60wZR_V8cOPiZgNm5OIoY5Q&oe=643A971E",
-          "id": "17876516963826903"
-      },
-      {
-          "media_type": "IMAGE",
-          "media_url": "https://scontent.cdninstagram.com/v/t51.29350-15/332333706_568603728652919_1562774603231974087_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=8ae9d6&_nc_ohc=PaMc8JV3fygAX_7uomL&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AfBYYKQdwkoBcGixfSNbvf5M3HOPRdgIwLUDZNoeVQCMeg&oe=6439D98C",
-          "id": "17891707772783545"
-      }
-  ]
-}, */

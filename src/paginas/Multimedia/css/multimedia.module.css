@@ -1,0 +1,6 @@
+.root{
+  @apply relative
+}
+.paper{
+  @apply relative !overflow-visible
+}
