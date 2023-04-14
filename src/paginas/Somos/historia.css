@@ -1,0 +1,78 @@
+.starwars section {
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   z-index: 1;
+}
+
+.starwars .intro {
+   width: 100%;
+   margin: 0;
+   font-size: 200%;
+   font-weight: 400;
+   color: #CDB057;
+   opacity: 0;
+   animation: intro 4s ease-out 1s;
+}
+
+.starwars .titles {
+   width: 80%;
+   color: #CDB057;
+   margin: auto;
+   top: auto;
+   bottom: 2px;
+   height: 50em;
+   font-size: 260%;
+   text-align: justify;
+   overflow: hidden;
+   transform-origin: 50% 100%;
+   transform: perspective(260px) rotateX(25deg);
+}
+
+.starwars .titles>div {
+   position: absolute;
+   top: 100%;
+   animation: titles 100s linear 6s;
+}
+
+.starwars .titles>div>p {
+   margin: 1.35em 0 1.85em 0;
+   line-height: 1.35em;
+   /*backface-visibility: hidden;*/
+}
+
+@keyframes intro {
+   0% {
+      opacity: 0;
+   }
+
+   20% {
+      opacity: 1;
+   }
+
+   90% {
+      opacity: 1;
+   }
+
+   100% {
+      opacity: 0;
+   }
+}
+
+@keyframes titles {
+   0% {
+      top: 100%;
+      opacity: 1;
+   }
+
+   95% {
+      opacity: 1;
+   }
+
+   100% {
+      top: -100%;
+      opacity: 0;
+   }
+}
