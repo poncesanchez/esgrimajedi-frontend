@@ -76,3 +76,11 @@
       opacity: 0;
    }
 }
+
+
+@media screen and (max-width: 600px) {
+   .starwars .titles {
+      width: 90%;
+      font-size: 140%;
+   }
+}

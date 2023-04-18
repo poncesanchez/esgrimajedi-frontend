@@ -18,28 +18,30 @@ interface SOCIAL {
 }
 
 export const DEFINITION = {
-  FACTION_IMAGES : {
+  FACTION_IMAGES: {
     'JEDI': {
       NORMAL: jedi,
-      HOVER:  jediHover,
+      HOVER: jediHover,
     },
     'SITH': {
       NORMAL: sith,
-      HOVER:  sithHover,
+      HOVER: sithHover,
     },
     'NEUTRAL': {
       NORMAL: neutral,
-      HOVER:  neutralHover,
+      HOVER: neutralHover,
     }
   } as FactionImages,
 
 
-  SOCIAL : {
+  SOCIAL: {
     INSTAGRAM: 'https://www.instagram.com/esgrimajedivalpo/',
     FACEBOOK: 'https://www.facebook.com/esgrimajedivalpo',
   } as SOCIAL,
 
   INSTRAGRAM_API: {
     PER_PAGE: 4
-  }
+  },
+
+  EMAIL: 'esgrimajedivalpo@gmail.com',
 }

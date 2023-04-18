@@ -7,24 +7,24 @@ import { DetallePersonaje } from "./DetallePersonaje";
 import { ListadoPersonajes } from "./ListadoPersonajes";
 
 export const Personajes = () => {
-  const { 
+  const {
     faccionSeleccionada,
     handleReset,
-  } : { 
-    faccionSeleccionada : faccionType,
-    handleReset : Function
+  }: {
+    faccionSeleccionada: faccionType,
+    handleReset: Function
   } = useContext(ConocenosContext);
-  
-  return(
+
+  return (
     <div>
       <div className="flex items-center border-b border-primary-80 pb-2">
-        <IconButton 
+        <IconButton
           onClick={() => handleReset()}
           className="hover:bg-secondary-100 hover:text-white">
           <KeyboardArrowLeft className="text-white mr-4" />
         </IconButton>
-        <h2 className="font-primary text-xl text-primary-30 font-light tracking-[0.2rem]">FACCIÓN 
-          <b className="font-black tracking-[0.5rem] text-white pl-4">{faccionSeleccionada.name}</b>
+        <h2 className="font-primary text-sm sm:text-xl text-primary-30 font-light tracking-widest sm:tracking-[0.2rem]">FACCIÓN
+          <b className="font-black tracking-widest sm:tracking-[0.5rem] text-white pl-4">{faccionSeleccionada.name}</b>
         </h2>
       </div>
 

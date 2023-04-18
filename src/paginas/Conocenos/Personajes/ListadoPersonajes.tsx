@@ -12,12 +12,13 @@ export const ListadoPersonajes = () => {
 
   const {
     personasFaccion,
-} = useContext(ConocenosContext);
+  } = useContext(ConocenosContext);
 
-  return(
+  return (
     <>
       <div className="py-5">
         <Swiper
+          className="px-10 sm:px-0"
           modules={[Navigation]}
           spaceBetween={16}
           slidesPerView={10}
@@ -25,6 +26,10 @@ export const ListadoPersonajes = () => {
           onSlideChange={() => console.log('slide change')}
           onSwiper={(swiper) => console.log(swiper)}
           breakpoints={{
+            300: {
+              slidesPerView: 1,
+              spaceBetween: 0,
+            },
             640: {
               slidesPerView: 3,
               spaceBetween: 40,
@@ -34,18 +39,18 @@ export const ListadoPersonajes = () => {
               spaceBetween: 40,
             },
             1024: {
-              slidesPerView:8,
+              slidesPerView: 8,
               spaceBetween: 40,
             },
-            1280:{
-              slidesPerView:10,
+            1280: {
+              slidesPerView: 10,
               spaceBetween: 40,
             }
           }}
         >
-          {personasFaccion.map(( persona : personaType , index : number ) => {
+          {personasFaccion.map((persona: personaType, index: number) => {
             return (
-              <SwiperSlide>
+              <SwiperSlide className="text-center">
                 <BotonPersonaje persona={persona} index={index} />
               </SwiperSlide>
             )

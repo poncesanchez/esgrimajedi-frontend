@@ -28,7 +28,7 @@ export const Multimedia = () => {
   return (
     <section id="multimedia"
       style={{ backgroundImage: `url(${imgFondoSeccionMultimedia})` }}
-      className="min-h-screen bg-no-repeat bg-top bg-contain pt-52 pb-16">
+      className="min-h-screen bg-no-repeat bg-top pt-52 pb-16 bg-auto sm:bg-contain">
       <div className="container mx-auto px-5">
         <div className="grid grid-cols-12 gap-5 items-center">
           <div className="col-span-12 mb-20">
@@ -58,7 +58,7 @@ export const Multimedia = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-12 gap-5 items-center px-20 relative">
+        <div className="grid grid-cols-12 gap-5 items-center sm:px-20 relative">
           {posts.indexFinal > 4 &&
             posts.seleccionado.permalink === '' &&
             <BotonPrevio onClickBotonPrevio={cargarPostsPrevios} />

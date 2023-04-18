@@ -28,8 +28,8 @@ export const Header = () => {
       header-section fixed w-full left-0 right-0 border-b border-b-primary-90 bg-gradient-to-b from-primary-100 to-transparent transition-all delay-100 ease-in-out z-50
       ${fixedHeader ? 'bg-primary-100 shadow-2xl border-b-0' : ''}
     `}>
-      <div className="container mx-auto px-5">
-        <div className="flex justify-items-center items-center py-1.5">
+      <div className="container mx-auto">
+        <div className="flex justify-items-center items-center py-1.5 px-5">
           <div className="w-2/12">
             <div className="text-start flex">
               <a href="#top">

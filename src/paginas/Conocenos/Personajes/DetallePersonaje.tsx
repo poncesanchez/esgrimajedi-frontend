@@ -7,40 +7,40 @@ import styles from './css/detallePersonaje.module.css';
 
 export const DetallePersonaje = () => {
 
-  const { 
+  const {
     personaSeleccionada,
     isLoadingPersona,
-  } : { 
-    personaSeleccionada : personaType,
-    isLoadingPersona : boolean
+  }: {
+    personaSeleccionada: personaType,
+    isLoadingPersona: boolean
   } = useContext(ConocenosContext);
 
-  return(
+  return (
     <div className="col-span-12 lg:col-span-6 relative">
       <div className={`absolute w-full flex flex-col sm:flex-row h-[400px] transition ease-in
-        ${isLoadingPersona ? 'opacity-100'  : 'opacity-0' }
+        ${isLoadingPersona ? 'opacity-100' : 'opacity-0'}
       `}>
         <div className="relative w-full">
           <div className="absolute z-30 w-full h-full flex text-center items-center justify-center">
             <span className="loader"></span>
           </div>
-        <div className="square-staff-border w-full h-[400px] absolute z-20"></div>
+          <div className="square-staff-border w-full sm:h-[400px] absolute z-20"></div>
         </div>
       </div>
 
-      <div className={`relative flex flex-col sm:flex-row h-[400px] transition ease-in
-        ${isLoadingPersona ? 'opacity-0'  : 'opacity-100  duration-700' }
+      <div className={`relative flex flex-col sm:flex-row sm:h-[400px] transition ease-in
+        ${isLoadingPersona ? 'opacity-0' : 'opacity-100  duration-700'}
       `}>
-        <div className="square-staff-border w-full h-[400px] absolute z-20" />
+        <div className="square-staff-border w-full sm:h-[400px] absolute z-20" />
         <div className="w-full sm:w-1/2">
           <div className="square-staff-border w-full sm:w-1/2 h-full absolute z-20" />
-          <div className="square-staff absolute z-10 w-3/4 h-full bg-gradient-to-b from-transparent to-primary-100" />
+          <div className="square-staff absolute z-10 w-full sm:w-3/4 h-full bg-gradient-to-b from-transparent to-primary-100" />
           <div
-            style={{ backgroundImage:  `url(${personaSeleccionada.image})` }}
+            style={{ backgroundImage: `url(${personaSeleccionada.image})` }}
             className="square-staff bg-primary-90 w-full h-[400px] z-0 bg-no-repeat bg-cover bg-center" />
         </div>
         <div className="w-full sm:w-1/2">
-          <div className="sm:absolute z-30 h-full w-full sm:w-1/2 p-5 py-6">
+          <div className="relative sm:absolute z-30 h-full w-full sm:w-1/2 p-5 py-6">
             <div className="">
               <h2 className="text-secondary-100 font-primary font-black uppercase tracking-wider pb-0 text-lg mt-1 mb-3">
                 {personaSeleccionada.name}</h2>
@@ -51,13 +51,13 @@ export const DetallePersonaje = () => {
               </div>
               <Divisor />
               <div className="overflow-y-auto h-56">
-                <div 
-                  className={styles.historia} 
-                  dangerouslySetInnerHTML={{ __html : personaSeleccionada.history }} />
+                <div
+                  className={styles.historia}
+                  dangerouslySetInnerHTML={{ __html: personaSeleccionada.history }} />
               </div>
             </div>
           </div>
-          <div className="absolute z-10 w-1/2 h-full bg-gradient-to-b from-transparent to-primary-100 text-white" />
+          <div className="hidden sm:block absolute z-10 w-1/2 h-full bg-gradient-to-b from-transparent to-primary-100 text-white" />
         </div>
       </div>
     </div>

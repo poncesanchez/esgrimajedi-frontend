@@ -47,17 +47,17 @@ export const Footer = () => {
             <div className="grid grid-cols-12 gap-6 items-center">
                <div className="col-span-12 text-center text-white">
                   <span className="m-3 inline-block">
-                    <a href={DEFINITION.SOCIAL.INSTAGRAM} target="_blank">
+                     <a href={DEFINITION.SOCIAL.INSTAGRAM} target="_blank">
                         <Instagram />
                      </a>
                   </span>
                   <span className="m-3 inline-block">
-                    <a href={DEFINITION.SOCIAL.FACEBOOK} target="_blank">
+                     <a href={DEFINITION.SOCIAL.FACEBOOK} target="_blank">
                         <Facebook />
                      </a>
                   </span>
                   <span className="m-3 inline-block">
-                     <a href="#">
+                     <a href={`mailto:${DEFINITION.EMAIL}`}>
                         <MailOutline />
                      </a>
                   </span>
