@@ -1,9 +1,9 @@
-import imgRango from './../../assets/rango.svg';
 import imgFondoSeccionSomos from './../../assets/fondo-seccion-somos.png';
 import { useEffect, useState } from 'react';
 import RangosServices from '../../servicios/rangos';
 import Historia from './Historia';
 import { SOMOS } from './../../config/text';
+import { DEFINITION } from './../../config/definitions';
 
 export const Somos = () => {
 
@@ -20,6 +20,7 @@ export const Somos = () => {
       setRangos(response.data)
     }
   };
+
 
   return (
     <section id="somos" className="relative">
@@ -63,8 +64,8 @@ export const Somos = () => {
                 <div className="grid grid-cols-12 lg:grid-cols-10 my-8 sm:gap-8  md:gap-5">
                   {rangos.map((rango, index) =>
                     <div key={rango.id} className="col-span-6 sm:col-span-6 lg:col-span-2 text-center mb-10 sm:mb-6">
-                      <div className="h-20 w-20 rounded-full border border-secondary-100 m-auto mb-1 sm:mb-2 flex text-center items-center justify-center">
-                        <img src={imgRango} className="w-12" alt="" />
+                      <div className=" m-auto mb-1 sm:mb-2 flex text-center items-center justify-center">
+                        <img src={DEFINITION.RANKS[rango.name]} className="w-24" alt="" />
                       </div>
                       <span className="font-secondary text-xs text-secondary-100 tracking-widest">{rango.name}</span>
                     </div>

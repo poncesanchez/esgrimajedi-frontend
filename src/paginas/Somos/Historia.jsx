@@ -4,6 +4,7 @@ import audioOGG from './../../assets/audio/crawl-star-wars.ogg';
 import audioMP3 from './../../assets/audio/crawl-star-wars.mp3';
 import './historia.css';
 import { SOMOS } from './../../config/text';
+import esgrimaJediValparaiso from './../../assets/esgrimajedi-valparaiso-logo.svg';
 
 export const Historia = ({
   onClose
@@ -64,6 +65,10 @@ export const Historia = ({
           <div className="h-full w-full flex justify-center items-center">
             Hace mucho tiempo,<br />en una galaxia muy, muy lejana...
           </div>
+        </section>
+
+        <section class="logo">
+          <img src={esgrimaJediValparaiso} alt="Esgrima Jedi Valparaíso" />
         </section>
 
         <section className="titles">

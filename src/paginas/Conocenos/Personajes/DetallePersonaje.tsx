@@ -4,6 +4,7 @@ import { Divisor } from "../../../componentes/Divisor/Divisor";
 import { personaType } from "../../../types/persona";
 import imgRangoNivel from './../../../assets/rango-ejemplo.svg';
 import styles from './css/detallePersonaje.module.css';
+import { DEFINITION } from "./../../../config/definitions";
 
 export const DetallePersonaje = () => {
 
@@ -14,6 +15,11 @@ export const DetallePersonaje = () => {
     personaSeleccionada: personaType,
     isLoadingPersona: boolean
   } = useContext(ConocenosContext);
+
+  const getRango = (rankname : string) => {
+    const rango = DEFINITION.RANKS[rankname]
+    return rango ? rango : imgRangoNivel;
+  }
 
   return (
     <div className="col-span-12 lg:col-span-6 relative">
@@ -45,8 +51,8 @@ export const DetallePersonaje = () => {
               <h2 className="text-secondary-100 font-primary font-black uppercase tracking-wider pb-0 text-lg mt-1 mb-3">
                 {personaSeleccionada.name}</h2>
 
-              <div className="flex text-secondary text-secondary-100 uppercase text-sm sm:tracking-[0.25rem] font-semibold pb-3">
-                <img src={imgRangoNivel} alt="rango" className="mr-2" />
+              <div className="flex text-secondary text-secondary-100 uppercase text-sm sm:tracking-[0.25rem] font-semibold pb-3 items-center">
+                <img src={getRango(personaSeleccionada.rankName)} className="w-14 mr-4" alt="" />
                 <span>{personaSeleccionada.rankName}<br />{personaSeleccionada.fullName}</span>
               </div>
               <Divisor />

@@ -4,6 +4,9 @@ import sith from '../assets/facciones/sith.svg';
 import sithHover from '../assets/facciones/sith-hover.svg';
 import neutral from '../assets/facciones/neutral.svg';
 import neutralHover from '../assets/facciones/neutral-hover.svg';
+import caballero from '../assets/rangos/knight.svg';
+import padawan from '../assets/rangos/padawan.svg';
+import maestro from '../assets/rangos/master.svg';
 
 interface FactionImages {
   [key: string]: {
@@ -15,6 +18,10 @@ interface FactionImages {
 interface SOCIAL {
   INSTAGRAM: string;
   FACEBOOK: string;
+}
+
+interface RANKS {
+  [key: string] : string
 }
 
 export const DEFINITION = {
@@ -44,4 +51,12 @@ export const DEFINITION = {
   },
 
   EMAIL: 'esgrimajedivalpo@gmail.com',
+
+
+  RANKS: {
+    CABALLERO: caballero,
+    MAESTRO: maestro,
+    APRENDIZ: padawan,
+    INICIADO: padawan,
+  } as RANKS
 }
