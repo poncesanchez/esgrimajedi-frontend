@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { ConocenosContext } from "../context/ConocenosContext";
 import { personaType } from "../../../types/persona";
+import { DEFINITION } from "../../../config/definitions";
 
 export const BotonPersonaje = ({
   persona,
@@ -12,8 +13,18 @@ export const BotonPersonaje = ({
 
   const { 
     handlePersonaSeleccionada,
-    personaSeleccionada 
+    personaSeleccionada,
+    faccionSeleccionada
 } = useContext(ConocenosContext);
+
+const getImage = (image : string) => {
+  if(image){
+    return image;
+  } else {
+    console.log(faccionSeleccionada.name.toUpperCase());
+    return DEFINITION.FACTION_IMAGES[faccionSeleccionada.name.toUpperCase()].PROFILE;
+  }
+}
 
   return(
     <button 
@@ -24,7 +35,7 @@ export const BotonPersonaje = ({
           w-20 h-20 border border-primary-80 bg-no-repeat bg-center bg-cover hover:opacity-60
           ${personaSeleccionada.id ===  persona.id ? 'border-secondary-100 !opacity-100' : 'opacity-40' }
         `}
-        style={{ backgroundImage: `url(${persona.image})`
+        style={{ backgroundImage: `url(${getImage(persona.image)})`
         }}></div>
     </button>
   )

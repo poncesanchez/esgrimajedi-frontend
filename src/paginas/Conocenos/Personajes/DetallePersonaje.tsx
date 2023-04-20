@@ -5,20 +5,32 @@ import { personaType } from "../../../types/persona";
 import imgRangoNivel from './../../../assets/rango-ejemplo.svg';
 import styles from './css/detallePersonaje.module.css';
 import { DEFINITION } from "./../../../config/definitions";
+import { faccionType } from "types/faccion";
 
 export const DetallePersonaje = () => {
 
   const {
     personaSeleccionada,
     isLoadingPersona,
+    faccionSeleccionada
   }: {
     personaSeleccionada: personaType,
-    isLoadingPersona: boolean
+    isLoadingPersona: boolean,
+    faccionSeleccionada: faccionType
   } = useContext(ConocenosContext);
 
   const getRango = (rankname : string) => {
     const rango = DEFINITION.RANKS[rankname]
     return rango ? rango : imgRangoNivel;
+  }
+
+  const getImage = (image : string) => {
+    if(image){
+      return image;
+    } else {
+      console.log(faccionSeleccionada.name.toUpperCase());
+      return DEFINITION.FACTION_IMAGES[faccionSeleccionada.name.toUpperCase()].PROFILE;
+    }
   }
 
   return (
@@ -42,7 +54,7 @@ export const DetallePersonaje = () => {
           <div className="square-staff-border w-full sm:w-1/2 h-full absolute z-20" />
           <div className="square-staff absolute z-10 w-full sm:w-3/4 h-full bg-gradient-to-b from-transparent to-primary-100" />
           <div
-            style={{ backgroundImage: `url(${personaSeleccionada.image})` }}
+            style={{ backgroundImage: `url(${getImage(personaSeleccionada.image)})` }}
             className="square-staff bg-primary-90 w-full h-[400px] z-0 bg-no-repeat bg-cover bg-center" />
         </div>
         <div className="w-full sm:w-1/2">

@@ -10,8 +10,8 @@ export const PostInstagram = ({
 }) => {
    return (
       <>
-         {posts.current.map((post: instagramPost) =>
-            <div className="col-span-12 sm:col-span-6 lg:col-span-3">
+         {posts.current.map((post: instagramPost, index : number) =>
+            <div className="col-span-12 sm:col-span-6 lg:col-span-3" key={index}>
                <div className="relative mx-4">
                   <div className="absolute z-30 w-full h-full flex text-center items-center justify-center">
                      <button

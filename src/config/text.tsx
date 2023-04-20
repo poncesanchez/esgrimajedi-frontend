@@ -29,7 +29,7 @@ export const SOMOS = {
 export const UNETE = {
    TITULO_SECCION: <>ELIGE tu lado<br />y únete al combate</>,
    DESCRIPCION: <>
-      <p className="text-primary-50 font-primary text-sm font-medium">¡no te pierdas nuestras prácticas de esgrima Jedi! Ven y experimenta la emoción de la lucha con sables láser. ¡Te esperamos con los brazos abiertos!</p>
+      <p className="text-primary-50 font-primary text-sm font-medium">¡no te pierdas nuestras prácticas de esgrima Jedi! Ven y experimenta la emoción de la lucha con sables láser.<br/>¡Te esperamos con los brazos abiertos!</p>
 
       <p className="text-primary-50 font-primary text-sm font-medium">...y que la fuerza te acompañe.</p>
    </>

@@ -23,8 +23,6 @@ export const ListadoPersonajes = () => {
           spaceBetween={16}
           slidesPerView={10}
           navigation
-          onSlideChange={() => console.log('slide change')}
-          onSwiper={(swiper) => console.log(swiper)}
           breakpoints={{
             300: {
               slidesPerView: 1,
