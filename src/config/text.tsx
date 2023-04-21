@@ -4,9 +4,9 @@ export const SOMOS = {
 
    //Descripción sección SOMOS
    DESCRIPCION: <>
-      <p className="text-white font-primary text-sm font-medium mb-5">Una agrupación que recrea con pasión y dedicación las legendarias batallas de la saga de Star Wars.</p>
-      <p className="text-white font-primary text-sm font-medium mb-5">Nuestro objetivo es mantener viva la llama de la Fuerza en nuestros corazones y compartir nuestro amor por esta saga con todos aquellos que tengan el valor y la determinación de unirse a nuestra comunidad.</p>
-      <p className="text-white font-primary text-sm font-medium mb-5">Internamente nos organizamos en rangos según la experticia, pericia y antigüedad.</p>
+      <p className="text-white font-primary text-md font-medium mb-5">Una agrupación que recrea con pasión y dedicación las legendarias batallas de la saga de Star Wars.</p>
+      <p className="text-white font-primary text-md font-medium mb-5">Nuestro objetivo es mantener viva la llama de la Fuerza en nuestros corazones y compartir nuestro amor por esta saga con todos aquellos que tengan el valor y la determinación de unirse a nuestra comunidad.</p>
+      <p className="text-white font-primary text-md font-medium mb-5">Internamente nos organizamos en rangos según la experticia, pericia y antigüedad.</p>
    </>,
 
    //Texto en historia animada
@@ -28,9 +28,22 @@ export const SOMOS = {
 
 export const UNETE = {
    TITULO_SECCION: <>ELIGE tu lado<br />y únete al combate</>,
-   DESCRIPCION: <>
-      <p className="text-primary-50 font-primary text-sm font-medium">¡no te pierdas nuestras prácticas de esgrima Jedi! Ven y experimenta la emoción de la lucha con sables láser.<br/>¡Te esperamos con los brazos abiertos!</p>
+   HORARIOS: <>
+              <div className="flex pb-6 items-center justify-center">
+                <div className="px-4">
+                  <span className="font-terciary text-secondary-100 text-xl block">Jueves y Sábados</span>
+                  <span className="font-terciary text-white text-base block">Arco Británico, Valparaíso</span>
+                </div>
+                <div className="px-4">
+                  <span className="font-terciary text-white text-base block">a partir de las</span>
+                  <span className="font-terciary text-secondary-100 text-2xl block">18:30 HRS</span>
+                </div>
+              </div>
+            </>,
 
-      <p className="text-primary-50 font-primary text-sm font-medium">...y que la fuerza te acompañe.</p>
+   DESCRIPCION: <>
+      <p className="text-primary-20 font-primary text-md font-medium">¡no te pierdas nuestras prácticas de esgrima Jedi!<br/>Ven y experimenta la emoción de la lucha con sables láser.<br/>¡Te esperamos con los brazos abiertos!</p>
+
+      <p className="text-primary-10 font-primary text-md font-semibold">...y que la fuerza te acompañe.</p>
    </>
 }

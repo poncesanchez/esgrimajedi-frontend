@@ -27,8 +27,12 @@ export const Somos = () => {
       <div className="container mx-auto py-20 lg:h-screen px-5 relative z-10 min-h-[500px]">
         {showHistoria
           ?
-          <div className="border border-secondary-100 mt-20 max-h-[460px] bg-[#1d192a6d]">
-            <Historia onClose={() => setShowHistoria(false)} />
+          <div className="grid grid-cols-12 gap-5 lg:h-screen items-center">
+            <div className="col-span-12">
+              <div className="border border-secondary-100 max-h-[460px] bg-[#1d192a6d]">
+                <Historia onClose={() => setShowHistoria(false)} />
+              </div>
+            </div>
           </div>
           :
           <>
@@ -79,7 +83,6 @@ export const Somos = () => {
                       VER HISTORIA
                     </button>
                   </div>
-
                 </div>
               </div>
             </div>

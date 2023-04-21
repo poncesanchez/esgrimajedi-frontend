@@ -21,7 +21,6 @@ const getImage = (image : string) => {
   if(image){
     return image;
   } else {
-    console.log(faccionSeleccionada.name.toUpperCase());
     return DEFINITION.FACTION_IMAGES[faccionSeleccionada.name.toUpperCase()].PROFILE;
   }
 }
