@@ -52,8 +52,8 @@
 .starwars .titles>div {
    position: absolute;
    top: 100%;
-   /* Aumentando el valor de 100s la animación es más lenta.    linear es el delay para iniciarla.  */
-   animation: titles 86s linear 13s;
+   /* Tiempo de duración de animación  linear es el delay para iniciarla.  */
+   animation: titles 88s linear 13s;
 }
 
 .starwars .titles>div>p {
@@ -90,7 +90,8 @@
    }
 
    100% {
-      top: -100%;
+      /* Mientras mas negativo más rápida es la animación */
+      top: -150%;
       opacity: 0;
    }
 }

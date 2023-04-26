@@ -67,7 +67,7 @@ export const Historia = ({
           </div>
         </section>
 
-        <section class="logo">
+        <section className="logo">
           <img src={esgrimaJediValparaiso} alt="Esgrima Jedi Valparaíso" />
         </section>
 

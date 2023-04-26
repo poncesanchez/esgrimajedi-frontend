@@ -24,7 +24,7 @@ export const ModalInstagramPost = ({
    const pagination = {
       clickable: true,
       renderBullet: function (index: number, className: string) {
-         return '<span class="w-5 h-5 inline-block bg-secondary-100 border-2 border-white rounded-full shadow-lg ' + className + '"></span>';
+         return '<span className="w-5 h-5 inline-block bg-secondary-100 border-2 border-white rounded-full shadow-lg ' + className + '"></span>';
       },
    };
 

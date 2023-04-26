@@ -48,7 +48,7 @@ export const ListadoPersonajes = () => {
         >
           {personasFaccion.map((persona: personaType, index: number) => {
             return (
-              <SwiperSlide className="text-center">
+              <SwiperSlide className="text-center" key={index}>
                 <BotonPersonaje persona={persona} index={index} />
               </SwiperSlide>
             )
