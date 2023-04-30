@@ -13,23 +13,31 @@ export const Conocenos = () => {
 
   const getData = async () => {
     const state = {
-      personas:[],
-      facciones:[],
+      personas: [],
+      facciones: [],
       vista: 'ELEGIR_FACCION'
     };
 
-    const responsePersonas = await PersonasServices.getPersonas();
-    if(responsePersonas.status===200){
-      //setPersonas(responsePersonas.data);
-     state.personas = responsePersonas.data;
-    }
+    try {
+      const responsePersonas = await PersonasServices.getPersonas();
+      if (responsePersonas.status === 200) {
+        let shuffled = responsePersonas.data
+          .map((value: any) => ({ value, sort: Math.random() }))
+          .sort((a: any, b: any) => a.sort - b.sort)
+          .map(({ value }: { value: any }) => value);
 
-    const responseFacciones = await FaccionesServices.getFacciones();
-    if(responseFacciones.status === 200){
-      state.facciones = responseFacciones.data;
-    }
+        state.personas = shuffled;
+      }
 
-    setData(state);
+      const responseFacciones = await FaccionesServices.getFacciones();
+      if (responseFacciones.status === 200) {
+        state.facciones = responseFacciones.data;
+      }
+
+      setData(state);
+    } catch (error) {
+      setData(state);
+    }
   };
 
   useEffect(() => {
@@ -70,11 +78,11 @@ export const Conocenos = () => {
           </div>
         </div>
 
-        {vista === 'ELEGIR_FACCION' && 
+        {vista === 'ELEGIR_FACCION' &&
           <SeleccionFacciones />
         }
 
-        {vista === 'PERSONAJES' && 
+        {vista === 'PERSONAJES' &&
           <Personajes />
         }
       </div>

@@ -65,9 +65,9 @@ export const Somos = () => {
                   </span>
                 </h2>
                 {SOMOS.DESCRIPCION}
-                <div className="grid grid-cols-12 lg:grid-cols-10 my-8 sm:gap-8  md:gap-5">
+                <div className="grid grid-cols-12 lg:grid-cols-10 my-8 sm:gap-8 md:gap-5">
                   {rangos.map((rango, index) =>
-                    <div key={rango.id} className="col-span-6 sm:col-span-6 lg:col-span-2 text-center mb-10 sm:mb-6">
+                    <div key={rango.id} className="col-span-6 sm:col-span-6 lg:col-span-2 text-center mb-10 sm:mb-6  order-1 sm:order-2">
                       <div className=" m-auto mb-1 sm:mb-2 flex text-center items-center justify-center">
                         <img src={DEFINITION.RANKS[rango.name]} className="w-24" alt="" />
                       </div>
@@ -75,7 +75,7 @@ export const Somos = () => {
                     </div>
                   )}
 
-                  <div className="col-span-12 text-center sm:text-left">
+                  <div className="col-span-12 text-center sm:text-left order-2 sm:order-1">
                     <button onClick={() => setShowHistoria(true)}
                       className="bg-no-repeat bg-cover bg-center font-primary font-bold text-secondary-100 text-xs py-2 px-10 inline-block border-secondary-100 border tracking-widest bg-primary-100
                     hover:bg-secondary-100 hover:text-white

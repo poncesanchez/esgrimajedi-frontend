@@ -1,8 +1,8 @@
 import axios from 'axios';
+import ENV_CONFIG from './../config';
 
 const Axios = axios.create({
-   baseURL: 'http://localhost:4000/v1',
-   timeout: 1000,
+   baseURL: ENV_CONFIG.baseURL,
    headers: {}
 });
 

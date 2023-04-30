@@ -19,20 +19,20 @@
    animation: intro 4s ease-out 1s;
 }
 
-.starwars .logo{
-  opacity: 0;
-  animation: logo 9s ease-out 9s; 
-  margin: auto;
-  top: auto;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.starwars .logo {
+   opacity: 0;
+   animation: logo 9s ease-out 9s;
+   margin: auto;
+   top: auto;
+   width: 100%;
+   height: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
 }
 
-.starwars .logo img{
-  width: inherit;
+.starwars .logo img {
+   width: inherit;
 }
 
 .starwars .titles {
@@ -52,13 +52,164 @@
 .starwars .titles>div {
    position: absolute;
    top: 100%;
-   /* Tiempo de duración de animación  linear es el delay para iniciarla.  */
-   animation: titles 88s linear 13s;
 }
 
 .starwars .titles>div>p {
    margin: 1.35em 0 1.85em 0;
    line-height: 1.35em;
+}
+
+@media(min-width:1240px) {
+   .starwars .titles>div {
+      animation: titlesXL 88s linear 13s;
+   }
+}
+
+@media(min-width:984px) and (max-width:1239px) {
+   .starwars .titles>div {
+      animation: titlesLG 88s linear 13s;
+   }
+}
+
+@media(min-width:728px) and (max-width:983px) {
+   .starwars .titles>div {
+      animation: titlesMD 88s linear 13s;
+   }
+}
+
+@media(min-width:600px) and (max-width:727px) {
+   .starwars .titles>div {
+      animation: titlesSM 88s linear 13s;
+   }
+
+   .starwars .titles {
+      font-size: 190%;
+   }
+
+   .starwars .intro {
+      font-size: 140%;
+   }
+}
+
+@media(max-width:599px) {
+   .starwars .titles>div {
+      animation: titlesXS 88s linear 13s;
+   }
+
+   .starwars .titles {
+      font-size: 124%;
+   }
+
+   .starwars .intro {
+      font-size: 100%;
+   }
+}
+
+@keyframes titlesXL {
+   0% {
+      top: 100%;
+      opacity: 1;
+   }
+
+   95% {
+      opacity: 1;
+   }
+
+   100% {
+      top: -150%;
+      opacity: 0;
+   }
+}
+
+@keyframes titlesLG {
+   0% {
+      top: 100%;
+      opacity: 1;
+   }
+
+   95% {
+      opacity: 1;
+   }
+
+   100% {
+      top: -170%;
+      opacity: 0;
+   }
+}
+
+@keyframes titlesMD {
+   0% {
+      top: 100%;
+      opacity: 1;
+   }
+
+   95% {
+      opacity: 1;
+   }
+
+   100% {
+      top: -260%;
+      opacity: 0;
+   }
+}
+
+@keyframes titlesSM {
+   0% {
+      top: 100%;
+      opacity: 1;
+   }
+
+   95% {
+      opacity: 1;
+   }
+
+   100% {
+      top: -260%;
+      opacity: 0;
+   }
+}
+
+@keyframes titlesXS {
+   0% {
+      top: 100%;
+      opacity: 1;
+   }
+
+   95% {
+      opacity: 1;
+   }
+
+   100% {
+      top: -300%;
+      opacity: 0;
+   }
+}
+
+
+
+
+@keyframes logo {
+   0% {
+      width: 18em;
+      margin: (18em / 2) 0 0 (-18em/2);
+
+      transform: scale(2.75);
+      opacity: 1;
+   }
+
+   50% {
+      opacity: 1;
+
+      width: 18em;
+      margin: (18em / 2) 0 0 (-18em/2);
+   }
+
+   100% {
+      transform: scale(.1);
+      opacity: 0;
+      width: 18em;
+      margin: (18em / 2) 0 0 (-18em/2);
+   }
 }
 
 @keyframes intro {
@@ -78,46 +229,6 @@
       opacity: 0;
    }
 }
-
-@keyframes titles {
-   0% {
-      top: 100%;
-      opacity: 1;
-   }
-
-   95% {
-      opacity: 1;
-   }
-
-   100% {
-      /* Mientras mas negativo más rápida es la animación */
-      top: -150%;
-      opacity: 0;
-   }
-}
-
-@keyframes logo {
-	0% { 
-    width: 18em;
-    margin: (18em / 2) 0 0 (-18em/2);
-    
-    transform: scale(2.75); 
-    opacity: 1; 
-  }
-	50% { 
-    opacity: 1; 
-    
-    width: 18em;
-    margin: (18em / 2) 0 0 (-18em/2);
-  }
-	100% { 
-    transform: scale(.1); 
-    opacity: 0;
-    width: 18em;
-    margin: (18em / 2) 0 0 (-18em/2);
-  }
-}
-
 
 @media screen and (max-width: 600px) {
    .starwars .titles {

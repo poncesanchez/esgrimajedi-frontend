@@ -19,13 +19,12 @@ export const DetallePersonaje = () => {
     faccionSeleccionada: faccionType
   } = useContext(ConocenosContext);
 
-  const getRango = (rankname : string) => {
-    const rango = DEFINITION.RANKS[rankname]
-    return rango ? rango : imgRangoNivel;
+  const getRango = () => {
+    return DEFINITION.FACTION_IMAGES[faccionSeleccionada.name.toUpperCase()].HOVER;
   }
 
-  const getImage = (image : string) => {
-    if(image){
+  const getImage = (image: string) => {
+    if (image) {
       return image;
     } else {
       console.log(faccionSeleccionada.name.toUpperCase());
@@ -64,7 +63,7 @@ export const DetallePersonaje = () => {
                 {personaSeleccionada.name}</h2>
 
               <div className="flex text-secondary text-secondary-100 uppercase text-sm sm:tracking-[0.25rem] font-semibold pb-3 items-center">
-                <img src={getRango(personaSeleccionada.rankName)} className="w-14 mr-4" alt="" />
+                <img src={getRango()} className="w-14 mr-4" alt="" />
                 <span>{personaSeleccionada.rankName}<br />{personaSeleccionada.fullName}</span>
               </div>
               <Divisor />
